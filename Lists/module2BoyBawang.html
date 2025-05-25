@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summative_1</title>
+     <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid #000000;
+      padding: 8px;
+    }
+    th {
+      background-color: #007bff;
+    }
+    .supplier-cell {
+      background-color: #ffbf00;
+      font-weight: bold;
+    }
+    .low-stock {
+      color: rgb(255, 0, 0);
+    }
+  </style>
+</head>
+<body>
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Supplier</th>
+      <th>Date</th>
+      <th>Image</th>
+    </tr>
+    <tr>
+      <td>10001</td>
+      <td>Boy Bawang Adobo (pc)</td>
+      <td>1000</td>
+      <td class="supplier-cell" rowspan="9">KSK</td>
+      <td>5/14/2019</td>
+      <td rowspan="8"><img src="e7528.github.io/Files/boybawang.jpg
+" alt="Boy Bawang" width="150"></td>
+    </tr>
+    <tr>
+      <td>10002</td>
+      <td>Boy Bawang Adobo (pack)</td>
+      <td>200</td>
+      <td>5/14/2019</td>
+    </tr>
+    <tr>
+      <td>10003</td>
+      <td>Boy Bawang Garlic (pc)</td>
+      <td>3000</td>
+      <td>5/15/2019</td>
+    </tr>
+    <tr>
+      <td>10004</td>
+      <td>Boy Bawang Garlic (pack)</td>
+      <td class="low-stock">150</td>
+      <td>5/15/2019</td>
+    </tr>
+    <tr>
+      <td>10005</td>
+      <td>Boy Bawang Spicy (pc)</td>
+      <td>4000</td>
+      <td>5/16/2019</td>
+    </tr>
+    <tr>
+      <td>10006</td>
+      <td>Boy Bawang Spicy (pack)</td>
+      <td>240</td>
+      <td>5/16/2019</td>
+    </tr>
+    <tr>
+      <td>10007</td>
+      <td>Boy Bawang BBQ (pc)</td>
+      <td>3000</td>
+      <td>5/17/2019</td>
+    </tr>
+    <tr>
+      <td>10008</td>
+      <td>Boy Bawang BBQ (pack)</td>
+      <td>210</td>
+      <td>5/17/2019</td>
+    </tr>
+  </table>
+
+<form action="#" method="post">
+    <ul style="list-style: none; padding: 0;">
+        <li>
+            <label for="name">Your Name* </label><br>
+            <input type="text" id="name" name="name" required>
+        </li>
+        <li>
+            <label for="email">Email*</label><br>
+            <input type="email" id="email" name="email" required>
+        </li>
+        <li>
+            <label for="contact">Contact No.*</label><br>
+            <input type="text" id="contact" name="contact" required>
+        </li>
+        <li>
+            <label for="message">Message*</label><br>
+            <textarea id="message" name="message" rows="4" cols="40"></textarea>
+        </li>
+        <li style="font-style: italic; font-size: 0.9em;"> Required fields*</li>
+
+        <li>
+            <button type="submit">Send</button>
+        </li>
+    </ul>
+</form>
+
+</body>
+</html>
 
