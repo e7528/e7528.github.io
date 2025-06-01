@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://www.feutech.edu.ph/feutech/assets/img/carousel/boptimized/FEUTech_Named_Top_University.jpg') no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    min-height: 40vh;
+    max-width: 500px;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgba(222, 222, 222, 0.801);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.form-group-long input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.form-group-short input{
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.form-group-short select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+input[type="submit"] {
+    background-color: #1e90ff;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #1c86ee;
+}
