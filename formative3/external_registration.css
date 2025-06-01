@@ -1,130 +1,86 @@
-/* Basic Reset */
-* {
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
-    background-color: #eef2f7; /* Light blue-grey background */
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Horizontally center */
-    align-items: flex-start; /* Align items to the start vertically */
-    padding: 20px; /* Add some padding around the content */
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    font-family: Arial, sans-serif;
+    background: url('https://www.feutech.edu.ph/feutech/assets/img/carousel/boptimized/FEUTech_Named_Top_University.jpg') no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    min-height: 40vh;
+    max-width: 500px;
+    margin: 30px auto;
+    box-sizing: border-box;
 }
 
 .container {
-    background-color: #fff; /* White background for the form container */
-    padding: 30px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    max-width: 650px; /* Maximum width of the form */
-    width: 100%; /* Make it responsive */
-    margin-top: 20px; /* Add some space from the top */
-    margin-bottom: 20px; /* Add some space at the bottom */
+    background-color: rgba(222, 222, 222, 0.801);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-h1 {
+.container h1 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-    font-size: 2em;
+    margin-bottom: 20px;
+    color: #000000;
 }
 
-form section {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee; /* Separator between sections */
-}
-
-form section:last-child {
-    border-bottom: none; /* No border for the last section */
-    padding-bottom: 0;
-}
-
-h2 {
-    margin-bottom: 15px;
-    color: #555;
-    border-bottom: 2px solid #007bff; /* Blue underline for section titles */
-    padding-bottom: 5px;
-    font-size: 1.3em;
-}
-
-.form-group {
-    margin-bottom: 18px; /* Space between form groups */
+.form-group-long,
+.form-group-short {
+    margin-bottom: 20px;
 }
 
 label {
-    display: block; /* Label on its own line */
-    margin-bottom: 6px;
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
     font-weight: bold;
-    color: #666;
-    font-size: 0.95em;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-select {
-    width: 100%; /* Make input fields fill their container */
-    padding: 10px 12px; /* Add padding inside input fields */
-    border: 1px solid #ccc; /* Grey border */
-    border-radius: 4px; /* Slightly rounded corners */
-    font-size: 1rem;
-    line-height: 1.5; /* Improve readability */
-    color: #333;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for focus */
+.form-group-long input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="date"]:focus,
-select:focus {
-    border-color: #007bff; /* Blue border on focus */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Light blue shadow on focus */
+.form-group-short input[type="text"] {
+    width: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
 }
 
-small {
-    display: block; /* Make small text appear below the input */
-    margin-top: 4px;
-    color: #777; /* Grey color for helper text */
-    font-size: 0.85em;
+.form-group-short select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
 }
 
-button[type="submit"] {
-    display: block; /* Button on its own line */
-    width: 100%; /* Make button fill its container */
-    padding: 12px;
-    background-color: #007bff; /* Primary blue color */
-    color: white; /* White text */
+input[type="submit"] {
+    background-color: #1e90ff;
+    color: white;
+    padding: 15px 20px;
     border: none;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    cursor: pointer; /* Indicate it's clickable */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    margin-top: 20px; /* Space above the button */
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px; /* Reduce padding on smaller screens */
-    }
-
-    h1 {
-        font-size: 1.8em; /* Slightly smaller main title */
-    }
-
-    h2 {
-        font-size: 1.2em; /* Slightly smaller section title */
-    }
+input[type="submit"]:hover {
+    background-color: #1c86ee;
 }
