@@ -47,7 +47,7 @@ label {
 }
 
 .form-group-short input{
-    width: 120px;
+    width: 40%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
