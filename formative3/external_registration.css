@@ -28,10 +28,6 @@ body {
     color: #000000;
 }
 
-.form-group-long,
-.form-group-short {
-    margin-bottom: 20px;
-}
 
 label {
     display: block;
