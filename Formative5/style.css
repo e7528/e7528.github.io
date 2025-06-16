@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(199, 199, 199);
+    font-size: large;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 20px;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.Intro img {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.name, .likesAndFaves {
+    font-family: 'verdana';
+}
