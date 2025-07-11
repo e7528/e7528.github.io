@@ -1,1 +1,81 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sakura</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Sign In</h2>
+    <p>Sign in with your Pokémon GO account</p>
+
+    <!-- 3rd-party Buttons -->
+    <div id="button-group">
+      <div class="btn apple"> Sign in with Apple</div>
+      <div class="btn facebook">Sign in with Facebook</div>
+      <div class="btn google">Sign in with Google</div>
+      <div class="btn niantic-kids">Sign in with Niantic Kids</div>
+      <div class="btn trainer-club">Sign in with Pokémon Trainer Club</div>
+    </div>
+
+    <!-- Sign In Form -->
+    <form id="signin-form" class="form hidden">
+      <h3>Sign In</h3>
+      <input type="text" placeholder="Username or Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Log In</button>
+    </form>
+
+    <!-- Create Account Form -->
+    <form id="create-form" class="form hidden">
+      <h3>Create Account</h3>
+      <input type="text" id="firstName" placeholder="First Name" required />
+      <input type="text" id="middleName" placeholder="Middle Name" required />
+      <input type="text" id="lastName" placeholder="Last Name" required />
+
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <input type="date" id="birthday" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <input type="text" id="accountCode" placeholder="Pokémon GO Account Code" required />
+
+      <button type="submit">Register</button>
+      <button type="button" id="return-btn">Return to Sign In</button>
+    </form>
+
+    <!-- Links -->
+    <p class="note">
+      Don’t have a Pokémon GO account? <a href="#" id="create-link">Make one today!</a>
+    </p>
+
+    <p class="help">
+      Having trouble? <a href="#">Visit our Help Center</a>
+    </p>
+
+    <!-- Footer -->
+    <footer>
+      <a href="#">Terms of Service</a> ·
+      <a href="#">Privacy Policy</a> ·
+      <a href="#">Cookie Policy</a>
+      <p>© Niantic, Inc. All Rights Reserved.</p>
+      <select>
+        <option>English</option>
+        <option>Español</option>
+        <option>Français</option>
+      </select>
+    </footer>
+  </div>
+
+  <script src="responsive.js"></script>
+</body>
+</html>
