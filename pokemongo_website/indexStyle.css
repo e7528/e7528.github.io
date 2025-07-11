@@ -41,7 +41,7 @@ nav ul {
 }
 
 .button {
-    background-color: #4285f4;
+    background-color: #f44283;
     color: #fff;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
@@ -52,23 +52,23 @@ nav ul {
     padding: 0.5rem 1rem;
 }
 
-.hero {
+.main {
     background-color: #e0f7fa;
     padding: 4rem 1rem;
     text-align: center;
 }
 
-.hero-content {
+.main-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.hero h1 {
+.main h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.hero p {
+.main p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
