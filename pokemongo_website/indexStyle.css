@@ -47,6 +47,10 @@ nav ul {
     border-radius: 5px;
 }
 
+main {
+    display: block;
+}
+
 .body {
     background-color: #fae0f0;
     padding: 4rem 1rem;
@@ -76,30 +80,6 @@ nav ul {
     display: inline-block;
 }
 
-.latest-news {
-    padding: 2rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.latest-news h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: left;
-}
-
-.news-item h3 {
-    margin-top: 0.5rem;
-}
-
 .featured {
     display: flex;
     justify-content: space-around;
@@ -108,6 +88,20 @@ nav ul {
     margin: 0 auto;
     text-align: center;
     gap: 2rem;
+    background-color: #fff;
+}
+
+.feature-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.feature-item img{
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
 }
 
 .download-button {
@@ -119,8 +113,17 @@ nav ul {
 .app-store-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
-    margin-top: 1rem;
+    width: 100%;
+    max-width: 30rem;
+    margin: 1rem auto;
+}
+
+.app-store-buttons img {
+    height: auto;
+    width: 250px;
+    object-fit: contain;
 }
 
 footer {
@@ -130,23 +133,10 @@ footer {
     text-align: center;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    margin-bottom: 2rem;
-}
-
-.social-media {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.footer p {
+footer p {
     font-size: 0.8rem;
     margin: 0.5rem 0;
+    color: #aaa;
 }
 
 @media (max-width: 768px) {
@@ -160,6 +150,12 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .auth-buttons {
+        margin-top: 1rem;
     }
 
     .body h1 {
