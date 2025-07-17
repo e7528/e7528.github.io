@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: url(cherry-blossom-tree.jpg);
+    background: #fae0f0;
     background-size: cover;
     color: #333;
 }
@@ -187,5 +187,14 @@ header h1 {
 .button {
         width: 100%;
         display: block;
+}
+
+.sign-in {
+    background-color: #ff94d9;
+    color: white;
+}
+
+.sign-in:hover {
+    background-color: #70cfff;
 }
 }
