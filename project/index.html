@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon GO</title>
     <link rel="stylesheet" href="indexStyle.css">
-    <script>
-        // Simple login check logic (homepage = no check needed)
-        // This can be added to store.html instead if needed
-    </script>
 </head>
 <body>
     <header>
@@ -25,9 +21,8 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="#download">Download</a></li>
             </ul>
-            <div class="signin-buttons">
-                <a href="signin.html" class="button">Sign In</a>
-                <button id="logout-btn">Log Out</button>
+            <div class="signin-buttons" id="signin-buttons">
+                <!-- JS will insert Sign In or Username + Log Out -->
             </div>
         </nav>
     </header>
@@ -66,9 +61,11 @@
             <p>Download Today</p>
             <div class="app-store-buttons">
                 <a href="#" class="app-store-button">
-                    <img src="assets/appstore.svg" alt="App Store"></a>
+                    <img src="assets/appstore.svg" alt="App Store">
+                </a>
                 <a href="#" class="app-store-button">
-                    <img src="assets/googleplay.png" alt="Google Play"></a>
+                    <img src="assets/googleplay.png" alt="Google Play">
+                </a>
             </div>
         </section>
     </main>
@@ -79,12 +76,40 @@
         </div>
     </footer>
 
+    <!-- JavaScript added -->
     <script>
-        document.getElementById("logout-btn").addEventListener("click", () => {
-            localStorage.removeItem("isLoggedIn");
-            alert("Logged out successfully.");
-            window.location.href = "index.html";
-        });
+        const signinContainer = document.getElementById("signin-buttons");
+        const username = localStorage.getItem("username");
+
+        function createButton(text, href, onClick) {
+            const btn = document.createElement("a");
+            btn.classList.add("button");
+            btn.textContent = text;
+            if (href) btn.href = href;
+            if (onClick) btn.onclick = onClick;
+            return btn;
+        }
+
+        if (username) {
+            // User is signed in
+            const nameDisplay = document.createElement("span");
+            nameDisplay.textContent = "Welcome, " + username;
+            nameDisplay.style.marginRight = "10px";
+
+            const logoutBtn = createButton("Log Out", "#", () => {
+                localStorage.removeItem("username");
+                window.location.reload();
+            });
+
+            signinContainer.innerHTML = "";
+            signinContainer.appendChild(nameDisplay);
+            signinContainer.appendChild(logoutBtn);
+        } else {
+            // User is not signed in
+            const signinBtn = createButton("Sign In", "signin.html");
+            signinContainer.innerHTML = "";
+            signinContainer.appendChild(signinBtn);
+        }
     </script>
 </body>
 </html>
