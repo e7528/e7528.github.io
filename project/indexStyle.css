@@ -81,6 +81,10 @@ main {
     border-radius: 5px;
     display: inline-block;
 }
+.button:hover {
+    background-color: #ff7ccf;
+}
+
 
 .featured {
     display: flex;
