@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Element references
   const buttonGroup = document.getElementById('button-group');
   const signinForm = document.getElementById('signin-form');
   const createForm = document.getElementById('create-form');
   const createLink = document.getElementById('create-link');
   const returnBtn = document.getElementById('return-btn');
   const createMessage = document.getElementById('create-message');
-
   const signinEmailInput = document.getElementById('signin-email');
   const signinPasswordInput = document.getElementById('signin-password');
   const showPasswordCheckbox = document.getElementById('show-password');
+  const signinButtons = document.querySelector('.signin-buttons');
 
-  // Pre-fill saved email if any
+  // Prefill email if saved
   if (signinEmailInput) {
     const savedEmail = localStorage.getItem('userEmail');
-    if (savedEmail) {
-      signinEmailInput.value = savedEmail;
-    }
+    if (savedEmail) signinEmailInput.value = savedEmail;
   }
 
-  // Show/Hide password
+  // Toggle password visibility
   if (showPasswordCheckbox && signinPasswordInput) {
     showPasswordCheckbox.addEventListener('change', () => {
       signinPasswordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Show Create Account form
+  // Switch to Create Account form
   createLink?.addEventListener('click', (e) => {
     e.preventDefault();
     buttonGroup?.classList.add('hidden');
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createMessage?.classList.add('hidden');
   });
 
-  // Return to Sign In
+  // Return to Sign In form
   returnBtn?.addEventListener('click', () => {
     createForm?.classList.add('hidden');
     signinForm?.classList.remove('hidden');
@@ -54,10 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     createMessage?.classList.remove('hidden');
   });
 
-  // Sign In
+  // Handle Sign In form
   signinForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const inputEmail = signinEmailInput?.value.trim() || '';
     const inputPassword = signinPasswordInput?.value || '';
 
@@ -66,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (inputEmail === savedEmail && inputPassword === savedPassword) {
       localStorage.setItem('loggedIn', 'true');
-      localStorage.setItem('username', inputEmail.split('@')[0]); // store username from email
+      localStorage.setItem('username', inputEmail.split('@')[0]);
       alert('Signed in successfully!');
       window.location.href = 'index.html';
     } else {
@@ -74,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Create Account
+  // Handle Create Account form
   createForm?.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -109,8 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'index.html';
   });
 
-  // Route guard (only restrict store.html, NOT homepage)
-  const protectedPages = ['store.html', 'dashboard.html']; // add more if needed
+  // Page protection for specific pages
+  const protectedPages = ['store.html', 'dashboard.html'];
   const isProtectedPage = protectedPages.some(page => window.location.pathname.includes(page));
 
   if (isProtectedPage && localStorage.getItem('loggedIn') !== 'true') {
@@ -118,8 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   }
 
-  // Show user info or Sign In on homepage
-  const signinButtons = document.querySelector('.signin-buttons');
+  // Display sign-in or welcome/logout button
   if (signinButtons) {
     signinButtons.innerHTML = '';
 
