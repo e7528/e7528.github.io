@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (inputEmail === savedEmail && inputPassword === savedPassword) {
       localStorage.setItem('loggedIn', 'true');
       alert('Signed in successfully!');
-      window.location.href = 'dashboard.html'; //CHANGE IT TO THE HOMEPAGE
+      window.location.href = 'index.html'; //CHANGE IT TO THE HOMEPAGE
     } else {
       alert('Invalid email or password.');
     }
@@ -105,16 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('loggedIn', 'true');
 
     alert('Account successfully registered! Logging you in...');
-    window.location.href = 'dashboard.html'; //CHANGE IT TO THE HOMEPAGE
+    window.location.href = 'index.html'; //CHANGE IT TO THE HOMEPAGE
   });
 
   // ✅ Auto-login
   if (localStorage.getItem('loggedIn') === 'true' && !window.location.pathname.includes('dashboard.html')) {
-    window.location.href = 'dashboard.html'; //CHANGE IT TO THE HOMEPAGE
+    window.location.href = 'index.html'; //CHANGE IT TO THE HOMEPAGE
   }
 
   // ✅ Guard dashboard if not logged in
-  if (window.location.pathname.includes('dashboard.html')) { //CHANGE IT TO THE HOMEPAGE
+  if (window.location.pathname.includes('index.html')) { //CHANGE IT TO THE HOMEPAGE
     if (localStorage.getItem('loggedIn') !== 'true') {
       alert('Access denied. Please sign in.');
       window.location.href = 'signin.html';
