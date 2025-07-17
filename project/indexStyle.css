@@ -1,122 +1,197 @@
-
-* {
-  box-sizing: border-box;
-}
+/*Adrien Tan*/
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-image: url('assets/cherry-blossom-tree.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-.container {
-  background-color: white;
-  text-align: center;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
-  max-width: 400px;
-  width: 90%;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.btn {
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.apple { background-color: black; }
-.facebook { background-color: #1877f2; }
-.google {
-  background-color: white;
-  color: #444;
-  border: 1px solid #ccc;
-}
-.niantic-kids { background-color: #f44236; }
-.trainer-club { background-color: #34a853; }
-
-.form {
-  margin-top: 20px;
+img {
+    display: block;
+    max-width: 100%;
 }
 
-.hidden {
-  display: none;
+header {
+    background-color: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
 }
 
-.form input,
-.form select,
-.form input[type="date"] {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+nav ul {
+    display: flex;
+    gap: 1.5rem;
 }
 
-#return-btn {
-  background-color: #6c757d;
+.signin-buttons .button {
+    background-color: #fa9dd8;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
-#return-btn:hover {
-  background-color: #5a6268;
+main {
+    display: block;
 }
 
-.form button:hover {
-  background-color: #0056b3;
+.body {
+    background-color: #fae0f0;
+    padding: 4rem 1rem;
+    text-align: center;
 }
 
-.note,
-.help {
-  margin-top: 20px;
-  font-size: 0.9em;
+.download-intro {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.note a,
-.help a {
-  color: #007bff;
-  text-decoration: none;
+.body h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-.note a:hover,
-.help a:hover {
-  text-decoration: underline;
+.body p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.button {
+    background-color: #f3a6e5;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.featured {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    gap: 2rem;
+    background-color: #fff;
+}
+
+.featured-items {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.featured-items img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.download-button {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #f0f0f0;
+}
+
+.app-store-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 30rem;
+    margin: 1rem auto;
+}
+
+.app-store-buttons img {
+    height: auto;
+    width: 250px;
+    object-fit: contain;
 }
 
 footer {
-  margin-top: 20px;
-  font-size: 0.75em;
-  color: gray;
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
-footer a {
-  color: gray;
-  text-decoration: none;
-  margin: 0 5px;
+footer p {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+    color: #aaa;
 }
 
-footer select {
-  margin-top: 10px;
-  padding: 4px;
+@media (max-width: 768px) {
+nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+}
+
+nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+}
+    
+.signin-buttons {
+        margin-top: 1rem;
+}
+
+.body h1 {
+        font-size: 1.8rem;
+}
+
+.body p {
+        font-size: 1rem;
+}
+    
+.featured {
+        flex-direction: column;
+        align-items: center;
+}
+
+.featured-items {
+        max-width: 500px;
+        width: 100%;
+}
+
+.app-store-buttons {
+        flex-direction: column;
+        align-items: center;
+}
+}
+
+@media (max-width: 480px) {
+.body h1 {
+        font-size: 1.5rem;
+}
+
+.signin-buttons .button {
+        display: block;
+        width: 100%;
+        text-align: center;
+}
 }
