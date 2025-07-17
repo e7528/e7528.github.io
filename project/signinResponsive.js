@@ -1,4 +1,3 @@
-//Jomer Junio
 document.addEventListener('DOMContentLoaded', () => {
   const buttonGroup = document.getElementById('button-group');
   const signinForm = document.getElementById('signin-form');
@@ -11,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const signinPasswordInput = document.getElementById('signin-password');
   const showPasswordCheckbox = document.getElementById('show-password');
 
-  // ✅ Pre-fill saved email if any
+  // Pre-fill saved email if any
   if (signinEmailInput) {
     const savedEmail = localStorage.getItem('userEmail');
     if (savedEmail) {
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ✅ Show/Hide password
+  // Show/Hide password
   if (showPasswordCheckbox && signinPasswordInput) {
     showPasswordCheckbox.addEventListener('change', () => {
       signinPasswordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createMessage?.classList.remove('hidden');
   });
 
-  // ✅ Sign In
+  // Sign In
   signinForm?.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -67,14 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (inputEmail === savedEmail && inputPassword === savedPassword) {
       localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('username', inputEmail.split('@')[0]); // store username from email
       alert('Signed in successfully!');
-      window.location.href = 'index.html'; //CHANGE IT TO THE HOMEPAGE
+      window.location.href = 'index.html';
     } else {
       alert('Invalid email or password.');
     }
   });
 
-  // ✅ Create Account
+  // Create Account
   createForm?.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -103,31 +103,54 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('userEmail', email);
     localStorage.setItem('userPassword', password);
     localStorage.setItem('loggedIn', 'true');
+    localStorage.setItem('username', email.split('@')[0]);
 
     alert('Account successfully registered! Logging you in...');
-    window.location.href = 'index.html'; //CHANGE IT TO THE HOMEPAGE
+    window.location.href = 'index.html';
   });
 
-  // ✅ Auto-login
-  if (localStorage.getItem('loggedIn') === 'true' && !window.location.pathname.includes('dashboard.html')) {
-    window.location.href = 'index.html'; //CHANGE IT TO THE HOMEPAGE
+  // Route guard (only restrict store.html, NOT homepage)
+  const protectedPages = ['store.html', 'dashboard.html']; // add more if needed
+  const isProtectedPage = protectedPages.some(page => window.location.pathname.includes(page));
+
+  if (isProtectedPage && localStorage.getItem('loggedIn') !== 'true') {
+    alert('Access denied. Please sign in.');
+    window.location.href = 'signin.html';
   }
 
-  // ✅ Guard dashboard if not logged in
-  if (window.location.pathname.includes('index.html')) { //CHANGE IT TO THE HOMEPAGE
-    if (localStorage.getItem('loggedIn') !== 'true') {
-      alert('Access denied. Please sign in.');
-      window.location.href = 'signin.html';
+  // Show user info or Sign In on homepage
+  const signinButtons = document.querySelector('.signin-buttons');
+  if (signinButtons) {
+    signinButtons.innerHTML = '';
+
+    if (localStorage.getItem('loggedIn') === 'true') {
+      const username = localStorage.getItem('username') || 'User';
+
+      const welcome = document.createElement('span');
+      welcome.textContent = `Welcome, ${username}`;
+      welcome.style.color = '#fff';
+      welcome.style.marginRight = '10px';
+
+      const logoutBtn = document.createElement('button');
+      logoutBtn.id = 'logout-btn';
+      logoutBtn.className = 'button';
+      logoutBtn.textContent = 'Log Out';
+
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('username');
+        alert('You have been logged out.');
+        window.location.reload();
+      });
+
+      signinButtons.appendChild(welcome);
+      signinButtons.appendChild(logoutBtn);
+    } else {
+      const signInLink = document.createElement('a');
+      signInLink.href = 'signin.html';
+      signInLink.className = 'button';
+      signInLink.textContent = 'Sign In';
+      signinButtons.appendChild(signInLink);
     }
-  }
-
-  // ✅ Logout only clears session
-  const logoutBtn = document.getElementById('logout-btn');
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-      localStorage.removeItem('loggedIn'); 
-      alert('You have been logged out.');
-      window.location.href = 'signin.html';
-    });
   }
 });
