@@ -1,4 +1,3 @@
-// auth.js
 document.addEventListener('DOMContentLoaded', () => {
   const buttonGroup = document.getElementById('button-group');
   const signinForm = document.getElementById('signin-form');
@@ -106,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   }
 
-  const signinButtons = document.querySelector('.signin-buttons');
+  // ✅ Fix here: use ID instead of class for "signin-buttons"
+  const signinButtons = document.getElementById('signin-buttons');
   if (signinButtons) {
     signinButtons.innerHTML = '';
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('username');
         alert('You have been logged out.');
-        window.location.reload();
+        window.location.href = 'signin.html'; // Optional: redirect to signin after logout
       });
 
       signinButtons.appendChild(welcome);
