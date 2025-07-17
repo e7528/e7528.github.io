@@ -106,39 +106,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ✅ Fix here: use ID instead of class for "signin-buttons"
-  const signinButtons = document.querySelector('.signin-buttons');
-if (signinButtons) {
-  signinButtons.innerHTML = '';
+document.addEventListener('DOMContentLoaded', () => {
+  const signinButtons = document.getElementById('signin-buttons');
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+  const username = localStorage.getItem('username');
 
-  if (localStorage.getItem('loggedIn') === 'true') {
-    const username = localStorage.getItem('username') || 'User';
+  if (signinButtons) {
+    if (isLoggedIn && username) {
+      // Show welcome message and log out button
+      signinButtons.innerHTML = `
+        <span class="welcome-msg">Welcome, <strong>${username}</strong></span>
+        <button id="logoutBtn">Log Out</button>
+      `;
 
-    const welcome = document.createElement('span');
-    welcome.textContent = `Welcome, ${username}`;
-    welcome.style.color = '#fff';
-    welcome.style.marginRight = '10px';
-
-    const logoutBtn = document.createElement('button');
-    logoutBtn.id = 'logout-btn';
-    logoutBtn.className = 'button';
-    logoutBtn.textContent = 'Log Out';
-
-    logoutBtn.addEventListener('click', () => {
+      document.getElementById('logoutBtn').addEventListener('click', () => {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('username');
-        alert('You have been logged out.');
-        window.location.href = 'index.html';
-    });
+        window.location.reload();
+      });
+    } else {
+      // Show sign-in button
+      signinButtons.innerHTML = `<button id="signinBtn">Sign In</button>`;
 
-    signinButtons.appendChild(welcome);
-    signinButtons.appendChild(logoutBtn);
-  } else {
-    const signInLink = document.createElement('a');
-    signInLink.href = 'signin.html';
-    signInLink.className = 'button';
-    signInLink.textContent = 'Sign In';
-    signinButtons.appendChild(signInLink);
+      document.getElementById('signinBtn').addEventListener('click', () => {
+        const user = prompt("Enter your username:");
+        if (user && user.trim() !== "") {
+          localStorage.setItem('loggedIn', 'true');
+          localStorage.setItem('username', user.trim());
+          window.location.reload();
+        }
+      });
+    }
   }
-}
+});
 
 });
