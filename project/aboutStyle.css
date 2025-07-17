@@ -4,7 +4,6 @@ body {
     background: url(cherry-blossom-tree.jpg);
     background-size: cover;
     color: #333;
-
 }
 
 
@@ -21,7 +20,7 @@ header h1 {
     text-align: center;
     color: #ff3c3c;
     margin-bottom: 20px;
-     width: 90%;
+    width: 90%;
 }
 
 .info h2,
