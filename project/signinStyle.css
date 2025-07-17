@@ -1,4 +1,3 @@
-/*Jomer Junio*/
 * {
   box-sizing: border-box;
 }
@@ -6,7 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('assets/cherry-blossom-tree.jpg');
+  background-image: url('cherry-blossom-tree.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -67,7 +66,7 @@ body {
 .form button {
   width: 100%;
   padding: 12px;
-  background-color: #fa9dd8;
+  background-color: #007bff;
   color: white;
   border: none;
   margin-top: 10px;
@@ -84,7 +83,7 @@ body {
 }
 
 .form button:hover {
-  background-color: #ff7ccf;
+  background-color: #0056b3;
 }
 
 .note,
