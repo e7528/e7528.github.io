@@ -4,6 +4,7 @@ body {
     background: url(cherry-blossom-tree.jpg);
     background-size: cover;
     color: #333;
+    width: 90%;
 }
 
 
@@ -135,16 +136,56 @@ footer {
     color: white;
 }
 
-.sign-up {
-    background-color: #94dfff;
-    color: white;
+@media (max-width: 768px) {
+.simple-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
 }
 
-.sign-up {
-    background-color: #94dfff;
-    color: white;
+.NavigationLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
 }
 
-.sign-up:hover {
-    background-color: #70cfff;
+.SignInUp {
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: center;
+}
+
+.container {
+        margin: 30px 15px;
+        padding: 20px;
+}
+
+.member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+}
+
+.member img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+header h1 {
+        font-size: 1.5rem;
+}
+
+.NavigationLinks li a {
+        font-size: 0.9rem;
+}
+
+.button {
+        width: 100%;
+        display: block;
+}
 }
