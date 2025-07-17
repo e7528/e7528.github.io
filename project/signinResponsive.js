@@ -124,10 +124,10 @@ if (signinButtons) {
     logoutBtn.textContent = 'Log Out';
 
     logoutBtn.addEventListener('click', () => {
-      localStorage.removeItem('loggedIn');
-      localStorage.removeItem('username');
-      alert('You have been logged out.');
-      window.location.reload();
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('username');
+        alert('You have been logged out.');
+        window.location.href = 'index.html';
     });
 
     signinButtons.appendChild(welcome);
