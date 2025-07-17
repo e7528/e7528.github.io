@@ -105,39 +105,27 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   }
 
-  // ✅ Fix here: use ID instead of class for "signin-buttons"
-document.addEventListener('DOMContentLoaded', () => {
+  // ✅ Show login state at top right
   const signinButtons = document.getElementById('signin-buttons');
   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
   const username = localStorage.getItem('username');
 
   if (signinButtons) {
     if (isLoggedIn && username) {
-      // Show welcome message and log out button
       signinButtons.innerHTML = `
         <span class="welcome-msg">Welcome, <strong>${username}</strong></span>
         <button id="logoutBtn">Log Out</button>
       `;
-
       document.getElementById('logoutBtn').addEventListener('click', () => {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('username');
         window.location.reload();
       });
     } else {
-      // Show sign-in button
       signinButtons.innerHTML = `<button id="signinBtn">Sign In</button>`;
-
       document.getElementById('signinBtn').addEventListener('click', () => {
-        const user = prompt("Enter your username:");
-        if (user && user.trim() !== "") {
-          localStorage.setItem('loggedIn', 'true');
-          localStorage.setItem('username', user.trim());
-          window.location.reload();
-        }
+        window.location.href = 'signin.html';
       });
     }
   }
-});
-
 });
