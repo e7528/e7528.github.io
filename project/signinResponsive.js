@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('username');
         alert('You have been logged out.');
-        window.location.href = 'signin.html'; // Optional: redirect to signin after logout
+        window.location.href = 'signin.html';
       });
 
       signinButtons.appendChild(welcome);
@@ -140,5 +140,4 @@ document.addEventListener('DOMContentLoaded', () => {
       signinButtons.appendChild(signInLink);
     }
   }
-
 });
