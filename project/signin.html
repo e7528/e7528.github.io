@@ -1,15 +1,16 @@
-<!--Jomer Junio-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sakura</title>
-  <link rel="stylesheet" href="signinStyle.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+    <div class="container">
+        <img src="LOGO.png" alt="Niantic Logo" class="logo">
     <h2>Sign In</h2>
+
     <p>Sign in with your Pokémon GO account</p>
 
     <!-- 3rd-party Buttons -->
@@ -24,8 +25,17 @@
     <!-- Sign In Form -->
     <form id="signin-form" class="form hidden">
       <h3>Sign In</h3>
-      <input type="text" placeholder="Username or Email" required />
-      <input type="password" placeholder="Password" required />
+
+      <input type="text" id="signin-email" placeholder="Username or Email" required />
+
+      <div class="password-wrapper">
+        <input type="password" id="signin-password" placeholder="Password" required />
+        <label>
+          <input type="checkbox" id="show-password" /> Show Password
+        </label>
+        <p id="password-status"></p>
+      </div>
+
       <button type="submit">Log In</button>
     </form>
 
@@ -54,7 +64,7 @@
     </form>
 
     <!-- Links -->
-    <p class="note">
+    <p class="note" id="create-message">
       Don’t have a Pokémon GO account? <a href="#" id="create-link">Make one today!</a>
     </p>
 
@@ -76,6 +86,6 @@
     </footer>
   </div>
 
-  <script src="signinResponsive.js"></script>
+  <script src="responsive.js"></script>
 </body>
 </html>
