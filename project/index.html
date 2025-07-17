@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon GO</title>
     <link rel="stylesheet" href="indexStyle.css">
+    <script>
+        // Simple login check logic (homepage = no check needed)
+        // This can be added to store.html instead if needed
+    </script>
 </head>
 <body>
     <header>
@@ -23,6 +27,7 @@
             </ul>
             <div class="signin-buttons">
                 <a href="signin.html" class="button">Sign In</a>
+                <button id="logout-btn">Log Out</button>
             </div>
         </nav>
     </header>
@@ -66,11 +71,6 @@
                     <img src="assets/googleplay.png" alt="Google Play"></a>
             </div>
         </section>
-
-        <!-- ✅ Added Log Out button -->
-        <div style="text-align: center; margin-top: 20px;">
-            <button id="logout-btn">Log Out</button>
-        </div>
     </main>
 
     <footer>
@@ -79,7 +79,12 @@
         </div>
     </footer>
 
-    <!-- ✅ Added Script -->
-    <script src="signinResponsive.js"></script>
+    <script>
+        document.getElementById("logout-btn").addEventListener("click", () => {
+            localStorage.removeItem("isLoggedIn");
+            alert("Logged out successfully.");
+            window.location.href = "index.html";
+        });
+    </script>
 </body>
 </html>
