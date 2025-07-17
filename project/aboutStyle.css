@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: url(cherry-blossom-tree.jpg);
+    background-size: cover;
+    color: #333;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #ff3c3c;
+    margin-bottom: 20px;
+}
+
+.info h2,
+.group-info h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #ccc;
+}
+
+.member h3 {
+    margin: 0;
+    color: #0077cc;
+}
+
+.member p {
+    margin: 5px 0 0;
+    font-style: italic;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2px 1px;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+.copyright p {
+    margin: 5px 0;
+}
+
+.simple-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    border-bottom: 2px solid #f5d4e8;
+    flex-wrap: wrap;
+}
+
+.leftside {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 45px;
+}
+
+.AboutPageLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    gap: 6px;
+}
+
+.SakuraLogo {
+    height: 25px;
+}
+
+.NavigationLinks {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.NavigationLinks li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+
+.SignInUp {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in {
+    background-color: #ff94d9;
+    color: white;
+}
+
+.sign-up {
+    background-color: #94dfff;
+    color: white;
+}
+
+.sign-up {
+    background-color: #94dfff;
+    color: white;
+}
+
+.sign-up:hover {
+    background-color: #70cfff;
+}
