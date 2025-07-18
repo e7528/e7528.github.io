@@ -6,6 +6,19 @@ body {
     color: #333;
 }
 
+header {
+    background-color: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 .container {
     max-width: 900px;
@@ -68,26 +81,6 @@ footer {
     margin: 5px 0;
 }
 
-.simple-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: white;
-    border-bottom: 2px solid #f5d4e8;
-    flex-wrap: wrap;
-}
-
-.leftside {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo {
-    height: 45px;
-}
-
 .AboutPageLink {
     display: flex;
     align-items: center;
@@ -116,33 +109,7 @@ footer {
     font-size: 0.95rem;
 }
 
-
-.SignInUp {
-    display: flex;
-    gap: 10px;
-}
-
-.button {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.sign-in {
-    background-color: #ff94d9;
-    color: white;
-}
-
 @media (max-width: 768px) {
-.simple-header {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        text-align: center;
-}
 
 .NavigationLinks {
         flex-direction: column;
@@ -203,4 +170,6 @@ header h1 {
     padding: 0.5rem 1rem;
     border-radius: 5px;
 }
+
+
 }
