@@ -74,10 +74,6 @@ body {
   cursor: pointer;
 }
 
-.form button:hover {
-  background-color: #ff7ccf;
-}
-
 #return-btn {
   background-color: #6c757d;
 }
@@ -86,13 +82,8 @@ body {
   background-color: #5a6268;
 }
 
-/* ✅ NEW: Consistent style for Home button */
-#home-btn {
-  background-color: #4CAF50; /* Example green for Home button */
-}
-
-#home-btn:hover {
-  background-color: #45a049;
+.form button:hover {
+  background-color: #ff7ccf;
 }
 
 .note,
@@ -129,19 +120,6 @@ footer select {
   padding: 4px;
 }
 
-.site-footer {
-  margin-top: 50px;
-  padding: 20px;
-  background: #333;
-  color: #fff;
-  text-align: center;
-}
-
-.site-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
 @media (max-width: 768px) {
   body {
     padding: 20px;
@@ -169,14 +147,6 @@ footer select {
     text-align: center;
     font-size: 0.8em;
   }
-
-  .site-footer {
-    font-size: 0.75em;
-  }
-
-  .site-footer select {
-    font-size: 0.75em;
-  }
 }
 
 @media (max-width: 480px) {
@@ -198,30 +168,40 @@ footer select {
     font-size: 0.9rem;
   }
 
+.site-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
+}
+
+.site-footer a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer select {
+  margin-top: 10px;
+  padding: 4px 8px;
+  font-size: 0.8em;
+}
+
+.site-footer .copyright {
+  margin-top: 15px;
+}
+
+
+@media (max-width: 768px) {
   .site-footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.8em;
-    color: #666;
-  }
-
-  .site-footer a {
-    color: #007bff;
-    text-decoration: none;
-    margin: 0 8px;
-  }
-
-  .site-footer a:hover {
-    text-decoration: underline;
+    font-size: 0.75em;
   }
 
   .site-footer select {
-    margin-top: 10px;
-    padding: 4px 8px;
-    font-size: 0.8em;
-  }
-
-  .site-footer .copyright {
-    margin-top: 15px;
+    font-size: 0.75em;
   }
 }
