@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const signinPasswordInput = document.getElementById('signin-password');
   const showPasswordCheckbox = document.getElementById('show-password');
 
-  // ✅ Removed the homeBtn logic completely
-
   if (signinEmailInput) {
     const savedEmail = localStorage.getItem('userEmail');
     if (savedEmail) signinEmailInput.value = savedEmail;
@@ -107,54 +105,55 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   }
 
-  // Show login state at top right
-  const signinButtons = document.getElementById('signin-buttons');
-  if (signinButtons) {
-    signinButtons.innerHTML = '';
+  // ✅ Show login state at top right
+const signinButtons = document.getElementById('signin-buttons');
+if (signinButtons) {
+  signinButtons.innerHTML = '';
 
-    if (localStorage.getItem('loggedIn') === 'true') {
-      const username = localStorage.getItem('username') || 'User';
+  if (localStorage.getItem('loggedIn') === 'true') {
+    const username = localStorage.getItem('username') || 'User';
 
-      const welcome = document.createElement('span');
-      welcome.textContent = `Welcome, ${username}`;
-      welcome.className = 'welcome-text';
-      welcome.style.marginRight = '10px';
+    const welcome = document.createElement('span');
+    welcome.textContent = `Welcome, ${username}`;
+    welcome.className = 'welcome-text'; 
+    welcome.style.marginRight = '10px';
 
-      const logoutBtn = document.createElement('button');
-      logoutBtn.id = 'logout-btn';
-      logoutBtn.className = 'button';
-      logoutBtn.textContent = 'Log Out';
+    const logoutBtn = document.createElement('button');
+    logoutBtn.id = 'logout-btn';
+    logoutBtn.className = 'button';
+    logoutBtn.textContent = 'Log Out';
 
-      logoutBtn.addEventListener('click', () => {
-        localStorage.removeItem('loggedIn');
-        localStorage.removeItem('username');
-        alert('You have been logged out.');
-        window.location.href = 'signin.html';
-      });
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('username');
+      alert('You have been logged out.');
+      window.location.href = 'signin.html';
+    });
 
-      signinButtons.appendChild(welcome);
-      signinButtons.appendChild(logoutBtn);
-    } else {
-      const signInLink = document.createElement('a');
-      signInLink.href = 'signin.html';
-      signInLink.className = 'button';
-      signInLink.textContent = 'Sign In';
-      signinButtons.appendChild(signInLink);
-    }
-  }
-});
-
-// Optional: Add to Cart function
-function addToCart(item) {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  const existingIndex = cart.findIndex(i => i.title === item.title);
-  if (existingIndex !== -1) {
-    cart[existingIndex].quantity += 1;
+    signinButtons.appendChild(welcome);
+    signinButtons.appendChild(logoutBtn);
   } else {
-    cart.push(item);
+    const signInLink = document.createElement('a');
+    signInLink.href = 'signin.html';
+    signInLink.className = 'button';
+    signInLink.textContent = 'Sign In';
+    signinButtons.appendChild(signInLink);
   }
-
-  localStorage.setItem('cart', JSON.stringify(cart));
-  window.location.href = 'cart.html';
 }
+//jfjfjjfjfjfjfjfjjfjfjf
+// 
+
+ function addToCart(item) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingIndex = cart.findIndex(i => i.title === item.title);
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+  }});
+~
