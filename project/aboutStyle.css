@@ -189,12 +189,18 @@ header h1 {
         display: block;
 }
 
-.sign-in {
-    background-color: #ff94d9;
-    color: white;
+.signin-buttons {
+        margin-top: 1rem;
 }
-
-.sign-in:hover {
-    background-color: #70cfff;
+.signin-buttons .button {
+        display: block;
+        width: 100%;
+        text-align: center;
+}
+.signin-buttons .button {
+    background-color: #fa9dd8;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 }
