@@ -10,12 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const signinPasswordInput = document.getElementById('signin-password');
   const showPasswordCheckbox = document.getElementById('show-password');
 
-  const homeBtn = document.getElementById('home-btn');
-  if (homeBtn) {
-    homeBtn.addEventListener('click', () => {
-      window.location.href = 'index.html';
-    });
-  }
+  // ✅ Removed the homeBtn logic completely
 
   if (signinEmailInput) {
     const savedEmail = localStorage.getItem('userEmail');
@@ -112,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   }
 
-  // Show login state (if you have a top-right display)
+  // Show login state at top right
   const signinButtons = document.getElementById('signin-buttons');
   if (signinButtons) {
     signinButtons.innerHTML = '';
