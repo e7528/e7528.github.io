@@ -127,6 +127,26 @@ footer select {
   margin-top: 15px;
 }
 
+.top-home-btn {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.top-home-btn button {
+  background-color: #ff94d9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.top-home-btn button:hover {
+  background-color: #70cfff;
+}
+
+
 @media (max-width: 768px) {
   body {
     padding: 20px;
