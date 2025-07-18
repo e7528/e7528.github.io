@@ -1,3 +1,4 @@
+<!--Erela Gavrielle A. Rosales-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +18,6 @@
       background-color: #f0f2f5;
       color: #333;
     }
-
-   
-
-
 
     .store-section {
       padding: 2rem;
@@ -164,7 +161,7 @@
     margin-bottom: 1rem;
   }
 
-  .price-btn {
+  .price-btn, .cart-btn {
      background: linear-gradient(to right,  #ff94d9, #ff94d9);
     border: none;
     color: white;
@@ -174,7 +171,7 @@
     transition: background 0.3s ease;
   }
 
-  .price-btn:hover {
+  .price-btn:hover, .cart-btn:hover {
     background: linear-gradient(to left, #94dfff,#94dfff);
   }
 
@@ -202,14 +199,14 @@
 
 .store-nav-bar {
   position: sticky;
-  top: 185px;
+  top: 0px;
   z-index: 999;
   background-color: #fff;
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 1rem 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid#ff94d9;
 }
 
 
@@ -426,6 +423,23 @@ header h1 {
 }
 }
 
+.sticky-cart {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+}
+.sticky-cart .btn {
+  padding: 10px 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cart-txt {
+  text-decoration: none;
+  color: white;
+}
+
   </style>
 </head>
 <body>
@@ -436,7 +450,7 @@ header h1 {
           <img src="assets/PokemonGoSakuraLogo.png" class="logo" />
         </a>
         <a href="about.html" class="AboutPageLink">
-          <span>About Page</span>
+          <span>Store</span>
         </a>
       </div>
 
@@ -618,7 +632,7 @@ header h1 {
           <p class="product-desc">Can only be purchased 1 time.</p>
           <button class="btn price-btn"  onclick='addToCart({
             title: "Quaxly Community Day Ultra Ticket Box",
-            price: 59,
+            price: 149,
             img: "photos/ticketBundles/bundle2.webp",
             quantity: 1
           })'>₱149.00</button>
@@ -660,7 +674,7 @@ header h1 {
 
 <!--ITEMS BUNDLES-->
   <section id="itmes-bundles" class="store-section">
-  <h2 id="items-bundles-jump" class="section-title">Items</h2>
+  <h2 id="item-bundles-jump" class="section-title">Items</h2>
 
   <div class="row justify-content-center">
     <div class="col-md-6 col-lg-4 mb-4">
@@ -774,7 +788,12 @@ header h1 {
         </div>
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Remote Raid Pass</h3>
-          <button class="btn price-btn">₱88.00</button>
+          <button class="btn price-btn"   onclick='addToCart({
+            title: "Remote Raid Pass",
+            price: 88,
+            img: "photos/items/raid_pass_blue.webp",
+            quantity: 1
+          })'>₱88.00</button>
         </div>
       </div>
     </div>
@@ -794,7 +813,12 @@ header h1 {
         </div>
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Pokémon Storage</h3>
-          <button class="btn price-btn">₱59.00</button>
+          <button class="btn price-btn"   onclick='addToCart({
+            title: "Pokémon Storage",
+            price: 59,
+            img: "photos/items/item_pokemon_storage_upgrade.webp",
+            quantity: 1
+          })'>₱59.00</button>
         </div>
       </div>
     </div>
@@ -814,7 +838,12 @@ header h1 {
         </div>
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Item Bag</h3>
-          <button class="btn price-btn">₱59.00</button>
+          <button class="btn price-btn"  onclick='addToCart({
+            title: "Item Bag",
+            price: 59,
+            img: "photos/items/item_pokemon_storage_upgrade.webp",
+            quantity: 1
+          })'>₱59.00</button>
         </div>
       </div>
     </div>
@@ -833,7 +862,12 @@ header h1 {
         </div>
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Max Revive</h3>
-          <button class="btn price-btn">₱59.00</button>
+          <button class="btn price-btn"  onclick='addToCart({
+            title: "Max Revive",
+            price: 59,
+            img: "photos/items/item_max_revive.webp",
+            quantity: 1
+          })'>₱59.00</button>
         </div>
       </div>
     </div>
@@ -853,7 +887,13 @@ header h1 {
         </div>
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Platinum Battle Pass</h3>
-          <button class="btn price-btn">₱88.00</button>
+          <button class="btn price-btn"   
+          onclick='addToCart({
+            title: "Platinum Battle Pass",
+            price: 88,
+            img: "photos/items/item_paid_raid_ticket.webp",
+            quantity: 1
+          })' >₱88.00</button>
         </div>
       </div>
     </div>
@@ -872,7 +912,12 @@ header h1 {
         </div>
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Max Particle Pack</h3>
-          <button class="btn price-btn">₱235.00</button>
+          <button class="btn price-btn"  onclick='addToCart({
+            title: "Max Particle Pack",
+            price: 235,
+            img: "photos/items/item_mp_replenish.webp",
+            quantity: 1
+          })'>₱235.00</button>
         </div>
       </div>
     </div>
@@ -892,7 +937,12 @@ header h1 {
         </div>
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Max Mushroom</h3>
-          <button class="btn price-btn">₱289.00</button>
+          <button class="btn price-btn"  onclick='addToCart({
+            title: "Max Mushroom",
+            price: 289,
+            img: "photos/items/item_max_boost.webp",
+            quantity: 1
+          })'>₱289.00</button>
         </div>
       </div>
     </div>
@@ -918,7 +968,12 @@ header h1 {
         <div class="product-details text-center mt-4">
           <h3 class="product-title">110 PokéCoins</h3>
           <p class="product-desc">10 Web Store Bonus Coins</p>
-          <button class="btn price-btn">₱29.00</button>
+          <button class="btn price-btn"  onclick='addToCart({
+            title: "110 PokéCoins",
+            price: 29,
+            img: "photos/pokecoins/coin-bundle-xxsmall.webp",
+            quantity: 1
+          })'>₱29.00</button>
         </div>
       </div>
     </div>
@@ -935,7 +990,12 @@ header h1 {
         <div class="product-details text-center mt-4">
           <h3 class="product-title">600 PokéCoins</h3>
           <p class="product-desc">50 Web Store Bonus Coins</p>
-          <button class="btn price-btn">₱149.00</button>
+          <button class="btn price-btn"   onclick='addToCart({
+            title: "600 PokéCoins",
+            price: 149,
+            img: "photos/pokecoins/coin-bundle-xsmall.webp",
+            quantity: 1
+          })'>₱149.00</button>
         </div>
       </div>
     </div>
@@ -952,7 +1012,12 @@ header h1 {
         <div class="product-details text-center mt-4">
           <h3 class="product-title">1,300 PokéCoins</h3>
           <p class="product-desc">100 Web Store Bonus Coins</p>
-          <button class="btn price-btn">₱289.00</button>
+          <button class="btn price-btn"   onclick='addToCart({
+            title: "1,300 PokéCoins",
+            price: 289,
+            img: "photos/pokecoins/coin-bundle-small_v2.webp",
+            quantity: 1
+          })'>₱289.00</button>
         </div>
       </div>
     </div>
@@ -969,7 +1034,12 @@ header h1 {
         <div class="product-details text-center mt-4">
           <h3 class="product-title">2,700 PokéCoins</h3>
           <p class="product-desc">200 Web Store Bonus Coins</p>
-          <button class="btn price-btn">₱589.00</button>
+          <button class="btn price-btn"   onclick='addToCart({
+            title: "2,700 PokéCoins",
+            price: 589,
+            img: "photos/pokecoins/coin-bundle-medium_v2.webp",
+            quantity: 1
+          })'>₱589.00</button>
         </div>
       </div>
     </div>
@@ -986,7 +1056,12 @@ header h1 {
         <div class="product-details text-center mt-4">
           <h3 class="product-title">5,600 PokéCoins</h3>
           <p class="product-desc">400 Web Store Bonus Coins</p>
-          <button class="btn price-btn">₱1,170.00</button>
+          <button class="btn price-btn"   onclick='addToCart({
+            title: "110 PokéCoins",
+            price: 1170,
+            img: "photos/pokecoins/coin-bundle-xxsmall.webp",
+            quantity: 1
+          })'>₱1,170.00</button>
         </div>
       </div>
     </div>
@@ -1003,7 +1078,12 @@ header h1 {
         <div class="product-details text-center mt-4">
           <h3 class="product-title">15, 500 PokéCoins</h3>
           <p class="product-desc">1,000 Web Store Bonus Coins</p>
-          <button class="btn price-btn">₱2,950.00</button>
+          <button class="btn price-btn"  onclick='addToCart({
+            title: "15,500 PokéCoins",
+            price: 2950,
+            img: "photos/pokecoins/coin-bundle-xlarge.webp",
+            quantity: 1
+          })'>₱2,950.00</button>
         </div>
       </div>
     </div>
@@ -1026,7 +1106,7 @@ header h1 {
         <div class="product-details text-center mt-4">
           <h3 class="product-title">Mystery Boxes</h3>
           <h4 class="product-desc">3 Daily Bundles</h4>
-          <button class="btn price-btn">Sign in to view</button>
+          <a href="https://e7528.github.io/project/signin.html"> <button class="btn price-btn">Sign in to view</button> </a>
         </div>
       </div>
    
@@ -1034,6 +1114,12 @@ header h1 {
 <hr>
 </section>
 
+
+<div class="sticky-cart">
+  <button class="btn cart-btn" onclick="goToCart()">
+   <a href="cart.html" class="cart-txt"><h1> CART </h1></a>
+  </button>
+</div>
 
 
 <footer>
@@ -1046,10 +1132,201 @@ header h1 {
 
 
 
+<script>
 
 
-  <script src="signinResponsive.js"></script>
+  function addToCart(item) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    const existingIndex = cart.findIndex(i => i.title === item.title);
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+  }
+
+
+
+
+
+
+
+</script>
+ 
+<!--   JOMER SCRIPT
+ <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonGroup = document.getElementById('button-group');
+  const signinForm = document.getElementById('signin-form');
+  const createForm = document.getElementById('create-form');
+  const createLink = document.getElementById('create-link');
+  const returnBtn = document.getElementById('return-btn');
+  const createMessage = document.getElementById('create-message');
+
+  const signinEmailInput = document.getElementById('signin-email');
+  const signinPasswordInput = document.getElementById('signin-password');
+  const showPasswordCheckbox = document.getElementById('show-password');
+
+  if (signinEmailInput) {
+    const savedEmail = localStorage.getItem('userEmail');
+    if (savedEmail) signinEmailInput.value = savedEmail;
+  }
+
+  if (showPasswordCheckbox && signinPasswordInput) {
+    showPasswordCheckbox.addEventListener('change', () => {
+      signinPasswordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+    });
+  }
+
+  if (buttonGroup) {
+    buttonGroup.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttonGroup.classList.add('hidden');
+        signinForm?.classList.remove('hidden');
+        createForm?.classList.add('hidden');
+        createMessage?.classList.remove('hidden');
+      });
+    });
+  }
+
+  createLink?.addEventListener('click', (e) => {
+    e.preventDefault();
+    buttonGroup?.classList.add('hidden');
+    signinForm?.classList.add('hidden');
+    createForm?.classList.remove('hidden');
+    createMessage?.classList.add('hidden');
+  });
+
+  returnBtn?.addEventListener('click', () => {
+    createForm?.classList.add('hidden');
+    signinForm?.classList.remove('hidden');
+    buttonGroup?.classList.add('hidden');
+    createMessage?.classList.remove('hidden');
+  });
+
+  signinForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const inputEmail = signinEmailInput?.value.trim() || '';
+    const inputPassword = signinPasswordInput?.value || '';
+
+    const savedEmail = localStorage.getItem('userEmail') || '';
+    const savedPassword = localStorage.getItem('userPassword') || '';
+
+    if (inputEmail === savedEmail && inputPassword === savedPassword) {
+      localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('username', inputEmail.split('@')[0]);
+      alert('Signed in successfully!');
+      window.location.href = 'index.html';
+    } else {
+      alert('Invalid email or password.');
+    }
+  });
+
+  createForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    if (!passwordRegex.test(password)) {
+      alert('Password must include uppercase, lowercase, number, and special character.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match.');
+      return;
+    }
+
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('userPassword', password);
+    localStorage.setItem('loggedIn', 'true');
+    localStorage.setItem('username', email.split('@')[0]);
+
+    alert('Account successfully registered! Logging you in...');
+    window.location.href = 'index.html';
+  });
+
+  const protectedPages = ['store.html'];
+  const isProtectedPage = protectedPages.some(page => window.location.pathname.includes(page));
+  if (isProtectedPage && localStorage.getItem('loggedIn') !== 'true') {
+    alert('Access denied. Please sign in.');
+    window.location.href = 'signin.html';
+  }
+
+  // ✅ Show login state at top right
+  const signinButtons = document.getElementById('signin-buttons');
+  if (signinButtons) {
+    signinButtons.innerHTML = '';
+
+    if (localStorage.getItem('loggedIn') === 'true') {
+      const username = localStorage.getItem('username') || 'User';
+
+      const welcome = document.createElement('span');
+      welcome.textContent = `Welcome, ${username}`;
+      welcome.style.color = '#fff';
+      welcome.style.marginRight = '10px';
+
+      const logoutBtn = document.createElement('button');
+      logoutBtn.id = 'logout-btn';
+      logoutBtn.className = 'button';
+      logoutBtn.textContent = 'Log Out';
+
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('username');
+        alert('You have been logged out.');
+        window.location.href = 'signin.html';
+      });
+
+      signinButtons.appendChild(welcome);
+      signinButtons.appendChild(logoutBtn);
+    } else {
+      const signInLink = document.createElement('a');
+      signInLink.href = 'signin.html';
+      signInLink.className = 'button';
+      signInLink.textContent = 'Sign In';
+      signinButtons.appendChild(signInLink);
+    }
+  }
+
+
+
+
+
+
+
+
+
+  function addToCart(item) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingIndex = cart.findIndex(i => i.title === item.title);
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+  }
+
+  });
+</script> -->
 
 </body>
 </html>

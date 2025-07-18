@@ -140,4 +140,26 @@ document.addEventListener('DOMContentLoaded', () => {
       signinButtons.appendChild(signInLink);
     }
   }
-});
+
+
+
+
+
+
+//jfjfjjfjfjfjfjfjjfjfjf
+// 
+
+ function addToCart(item) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingIndex = cart.findIndex(i => i.title === item.title);
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+  }});
+
