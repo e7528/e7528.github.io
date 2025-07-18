@@ -109,6 +109,22 @@ footer {
     font-size: 0.95rem;
 }
 
+.signin-buttons {
+        margin-top: 1rem;
+}
+.signin-buttons .button {
+        display: block;
+        width: 100%;
+        text-align: center;
+}
+.signin-buttons .button {
+    background-color: #fa9dd8;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+
 @media (max-width: 768px) {
 
 .NavigationLinks {
@@ -155,21 +171,5 @@ header h1 {
         width: 100%;
         display: block;
 }
-
-.signin-buttons {
-        margin-top: 1rem;
-}
-.signin-buttons .button {
-        display: block;
-        width: 100%;
-        text-align: center;
-}
-.signin-buttons .button {
-    background-color: #fa9dd8;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
 
 }
