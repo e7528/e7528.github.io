@@ -442,17 +442,71 @@ header h1 {
   color: white;
 }
 
+
+
 /*styles for the header */
-
-
-header {
-  background-color: #fff;
-
+/*from adrien*/
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-header > a {
-  text-decoration: none;
-  color: inherit;
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header > img {
+    display: block;
+    max-width: 100%;
+}
+
+header {
+    background-color: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.signin-buttons .button {
+    background-color: #fa9dd8;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+header > nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+}
+
+nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+}
+    
+.signin-buttons {
+        margin-top: 1rem;
+}
+
 }
 
 
