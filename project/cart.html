@@ -435,12 +435,12 @@ nav ul {
 
 
 <script>
+  // Get cart data globally
+  let cartData = JSON.parse(localStorage.getItem('cart')) || [];
 
-
-  
-  const cartData = JSON.parse(localStorage.getItem('cart')) || [];
-
+  // Renders the cart items
   function renderCart() {
+    cartData = JSON.parse(localStorage.getItem('cart')) || []; // Refresh data!
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.innerHTML = '';
     let total = 0;
@@ -464,14 +464,17 @@ nav ul {
     });
 
     document.getElementById('total-price').innerText = `₱${total.toFixed(2)}`;
+    updateCartCount();
   }
 
+  // Increase quantity
   function increaseQuantity(index) {
     cartData[index].quantity++;
     localStorage.setItem('cart', JSON.stringify(cartData));
     renderCart();
   }
 
+  // Decrease quantity
   function decreaseQuantity(index) {
     if (cartData[index].quantity > 1) {
       cartData[index].quantity--;
@@ -482,66 +485,46 @@ nav ul {
     renderCart();
   }
 
-  renderCart();
-
-document.querySelector('.checkout-btn').addEventListener('click', () => {
-  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
-  const hasItems = cartData.length > 0;
-
-  if (!hasItems) {
-    alert("Your cart is empty. Add items before checking out.");
-    return; 
+  // Update sticky cart icon count
+  function updateCartCount() {
+    const totalItems = cartData.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountEl = document.getElementById('cart-count');
+    if (cartCountEl) {
+      cartCountEl.textContent = `(${totalItems})`;
+    }
   }
 
-  if (isLoggedIn) {
-    localStorage.removeItem('cart');
-    window.location.href = 'thankyou.html';
-  } 
-  else {
-    alert("Please sign in before checking out.");
-    localStorage.setItem('afterLoginRedirect', window.location.href);
-    window.location.href = 'signin.html';
-  }
-});
+  // Handle checkout button
+  document.querySelector('.checkout-btn').addEventListener('click', () => {
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+    const hasItems = cartData.length > 0;
 
-window.addEventListener('DOMContentLoaded', () => {
-  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
-  const redirectTarget = localStorage.getItem('afterLoginRedirect');
+    if (!hasItems) {
+      alert("Your cart is empty. Add items before checking out.");
+      return;
+    }
 
-  if (isLoggedIn && redirectTarget === window.location.href) {
-    localStorage.removeItem('afterLoginRedirect');
-    alert("Welcome back! You're now signed in.");
-  }
-
-function renderCart() {
-  const cartData = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartItemsContainer = document.getElementById('cart-items');
-  cartItemsContainer.innerHTML = '';
-  let total = 0;
-
-  cartData.forEach((item, index) => {
-    total += item.price * item.quantity;
-    cartItemsContainer.innerHTML += `
-      <div class="cart-item">
-        <img src="${item.img}" alt="${item.title}" />
-        <div class="cart-item-details">
-          <h5>${item.title}</h5>
-          <p>₱${item.price.toFixed(2)}</p>
-        </div>
-        <div class="quantity-controls">
-          <button onclick="decreaseQuantity(${index})">-</button>
-          <span>${item.quantity}</span>
-          <button onclick="increaseQuantity(${index})">+</button>
-        </div>
-      </div>
-    `;
+    if (isLoggedIn) {
+      localStorage.removeItem('cart');
+      window.location.href = 'thankyou.html';
+    } else {
+      alert("Please sign in before checking out.");
+      localStorage.setItem('afterLoginRedirect', window.location.href);
+      window.location.href = 'signin.html';
+    }
   });
 
-  document.getElementById('total-price').innerText = `₱${total.toFixed(2)}`;
+  // Run on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    renderCart();
 
-  updateCartCount();
-});
-  
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+    const redirectTarget = localStorage.getItem('afterLoginRedirect');
+    if (isLoggedIn && redirectTarget === window.location.href) {
+      localStorage.removeItem('afterLoginRedirect');
+      alert("Welcome back! You're now signed in.");
+    }
+  });
 </script>
 
   
