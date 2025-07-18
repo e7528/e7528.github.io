@@ -2,444 +2,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="pokecoins, items, bundles, tickets, badges, event, pass, mystery bundle">
-  <meta name="description" content="Pokemon GO Web Store">
-  <title>Pokémon GO Web Store</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords" content="pokecoins, items, bundles, tickets, badges, event, pass, mystery bundle">
+<meta name="description" content="Pokemon GO Web Store">
+<title>Pokémon GO Web Store</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    body {
-      background-color: #f0f2f5;
-      color: #333;
-    }
+body {
+background-color: #f0f2f5;
+color: #333;
+}
 
-    .store-section {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
+.store-section {
+padding: 2rem;
+max-width: 1200px;
+margin: auto;
+}
 
-    .store-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
+.store-section h2 {
+font-size: 1.8rem;
+margin-bottom: 1.5rem;
+text-align: center;
+}
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
+.product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+}
 
-    .product-card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+.product-card {
+background-color: white;
+border-radius: 10px;
+padding: 1rem;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+text-align: center;
+}
 
-    .product-image {
-      width: 100%;
-      height: 150px;
-      background:linear-gradient(to right, #ff94d9, #94dfff);
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
+.product-image {
+width: 100%;
+height: 150px;
+background:linear-gradient(to right, #ff94d9, #94dfff);
+border-radius: 8px;
+margin-bottom: 1rem;
+}
 
-    .product-card h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
+.product-card h3 {
+margin-bottom: 0.5rem;
+font-size: 1.2rem;
+}
 
-    .product-card p {
-      font-size: 0.95rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
+.product-card p {
+font-size: 0.95rem;
+color: #666;
+margin-bottom: 0.5rem;
+}
 
-    .price {
-      display: block;
-      margin-bottom: 0.75rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
+.price {
+display: block;
+margin-bottom: 0.75rem;
+font-weight: bold;
+font-size: 1.1rem;
+}
 
-    .product-card button {
-      background-color: #ffcb05;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.product-card button {
+background-color: #ffcb05;
+border: none;
+padding: 0.5rem 1rem;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+}
 
 
 
-    @media (max-width: 768px) {
-      .navbar nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
+@media (max-width: 768px) {
+.navbar nav ul {
+flex-direction: column;
+gap: 1rem;
+}
+}
 
-      .product-card {
-    background: linear-gradient(to bottom, #e8fdf7, #ffffff);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: relative;
-    transition: box-shadow 0.3s ease;
-  }
+.product-card {
+background: linear-gradient(to bottom, #e8fdf7, #ffffff);
+border-radius: 16px;
+padding: 1.5rem;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+position: relative;
+transition: box-shadow 0.3s ease;
+}
 
-  .product-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  }
+.product-card:hover {
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
 
-  .limited-banner {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background-color: #4a5d57;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    z-index: 2;
-  }
+.limited-banner {
+position: absolute;
+top: 16px;
+left: 16px;
+background-color: #4a5d57;
+color: white;
+font-size: 0.75rem;
+font-weight: bold;
+padding: 0.25rem 0.5rem;
+border-radius: 4px;
+z-index: 2;
+}
 
-  .product-image .main-bundle {
-    width: 100px;
-    height: auto;
+.product-image .main-bundle {
+width: 100px;
+height: auto;
 
-  }
+}
 
-  .bundle-items {
-    margin-top: 1rem;
-  }
+.bundle-items {
+margin-top: 1rem;
+}
 
-  .item-icon {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-  }
+.item-icon {
+position: relative;
+display: inline-block;
+text-align: center;
+}
 
-  .item-icon img {
-    width: 36px;
-    height: 36px;
-  }
+.item-icon img {
+width: 36px;
+height: 36px;
+}
 
-  .item-icon span {
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    border-radius: 40%;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
-  }
+.item-icon span {
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+background: white;
+border-radius: 40%;
+font-size: 0.7rem;
+padding: 2px 6px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+font-weight: bold;
+}
 
-  .product-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
+.product-title {
+font-size: 1.2rem;
+font-weight: 600;
+margin-bottom: 0.25rem;
+}
 
-  .product-desc {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 1rem;
-  }
+.product-desc {
+font-size: 0.9rem;
+color: #555;
+margin-bottom: 1rem;
+}
 
-  .price-btn, .cart-btn {
-     background: linear-gradient(to right,  #ff94d9, #ff94d9);
-    border: none;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 24px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
+.price-btn, .cart-btn {
+background: linear-gradient(to right,  #ff94d9, #ff94d9);
+border: none;
+color: white;
+padding: 0.6rem 1.2rem;
+border-radius: 24px;
+font-weight: bold;
+transition: background 0.3s ease;
+}
 
-  .price-btn:hover, .cart-btn:hover {
-    background: linear-gradient(to left, #94dfff,#94dfff);
-  }
+.price-btn:hover, .cart-btn:hover {
+background: linear-gradient(to left, #94dfff,#94dfff);
+}
 
-  @media (max-width: 576px) {
-    .product-card {
-      padding: 1rem;
-    }
-    .item-icon img {
-      width: 28px;
-      height: 28px;
-    }
-    .item-icon span {
-      font-size: 0.6rem;
-    }
-  }
+@media (max-width: 576px) {
+.product-card {
+padding: 1rem;
+}
+.item-icon img {
+width: 28px;
+height: 28px;
+}
+.item-icon span {
+font-size: 0.6rem;
+}
+}
 
-  html {
-  scroll-padding-top: 80px;
-  scroll-behavior: smooth;
+html {
+scroll-padding-top: 80px;
+scroll-behavior: smooth;
 }.product-image img#mysterybox {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
+width: 100%;
+max-width: 250px;
+height: auto;
 }
 
 .store-nav-bar {
-  position: sticky;
-  top: 0px;
-  z-index: 999;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid#ff94d9;
+position: sticky;
+top: 0px;
+z-index: 999;
+background-color: #fff;
+display: flex;
+justify-content: center;
+gap: 2rem;
+padding: 1rem 0;
+border-bottom: 1px solid#ff94d9;
 }
 
 
 .store-nav-bar a {
-  text-decoration: none;
-  color:   #ff94d9;
-  font-weight: 500;
+text-decoration: none;
+color:   #ff94d9;
+font-weight: 500;
 }
 
 .store-nav-bar a:hover {
-  color:#94dfff;
-  text-decoration: underline;
+color:#94dfff;
+text-decoration: underline;
 }
 
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #fae0f0;
-    background-size: cover;
-    color: #333;
+font-family: Arial, sans-serif;
+margin: 0;
+background: #fae0f0;
+background-size: cover;
+color: #333;
 }
 
 
 .container {
-    max-width: 900px;
-    margin: 50px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+max-width: 900px;
+margin: 50px auto;
+background: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    text-align: center;
-    color: #ff3c3c;
-    margin-bottom: 20px;
-    width: 90%;
+text-align: center;
+color: #ff3c3c;
+margin-bottom: 20px;
+width: 90%;
 }
 
 .info h2,
 .group-info h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
+color: #2c3e50;
+border-bottom: 2px solid #ddd;
+padding-bottom: 5px;
 }
 
 .member {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+display: flex;
+align-items: center;
+margin-top: 20px;
 }
 
 .member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px;
-    border: 2px solid #ccc;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
+margin-right: 20px;
+border: 2px solid #ccc;
 }
 
 .member h3 {
-    margin: 0;
-    color: #0077cc;
+margin: 0;
+color: #0077cc;
 }
 
 .member p {
-    margin: 5px 0 0;
-    font-style: italic;
+margin: 5px 0 0;
+font-style: italic;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 2px 1px;
-    font-size: 0.9em;
-    margin-top: 40px;
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 2px 1px;
+font-size: 0.9em;
+margin-top: 40px;
 }
 
 .copyright p {
-    margin: 5px 0;
+margin: 5px 0;
 }
 
 .simple-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: white;
-    border-bottom: 2px solid #f5d4e8;
-    flex-wrap: wrap;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 30px;
+background-color: white;
+border-bottom: 2px solid #f5d4e8;
+flex-wrap: wrap;
 }
 
 .leftside {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+display: flex;
+align-items: center;
+gap: 12px;
 }
 
 .logo {
-    height: 45px;
+height: 45px;
 }
 
 .AboutPageLink {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #222;
-    font-weight: 600;
-    gap: 6px;
+display: flex;
+align-items: center;
+text-decoration: none;
+color: #222;
+font-weight: 600;
+gap: 6px;
 }
 
 .SakuraLogo {
-    height: 25px;
+height: 25px;
 }
 
 .NavigationLinks {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+display: flex;
+gap: 20px;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 .NavigationLinks li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 0.95rem;
+text-decoration: none;
+color: #333;
+font-weight: 500;
+font-size: 0.95rem;
 }
 
 
 .SignInUp {
-    display: flex;
-    gap: 10px;
+display: flex;
+gap: 10px;
 }
 
 .button {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;
+padding: 8px 16px;
+border-radius: 6px;
+font-weight: 600;
+text-decoration: none;
+text-align: center;
+transition: background-color 0.3s ease;
 }
 
 .sign-in {
-    background-color: #ff94d9;
-    color: white;
+background-color: #ff94d9;
+color: white;
 }
 
 @media (max-width: 768px) {
 .simple-header {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        text-align: center;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
+text-align: center;
 }
 
 .NavigationLinks {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        width: 100%;
-        margin-top: 1rem;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+width: 100%;
+margin-top: 1rem;
 }
 
 .SignInUp {
-        margin-top: 1rem;
-        flex-direction: column;
-        align-items: center;
+margin-top: 1rem;
+flex-direction: column;
+align-items: center;
 }
 
 .container {
-        margin: 30px 15px;
-        padding: 20px;
+margin: 30px 15px;
+padding: 20px;
 }
 
 .member {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+flex-direction: column;
+align-items: center;
+text-align: center;
 }
 
 .member img {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+margin-right: 0;
+margin-bottom: 10px;
+}
 }
 
 @media (max-width: 480px) {
 header h1 {
-        font-size: 1.5rem;
+font-size: 1.5rem;
 }
 
 .NavigationLinks li a {
-        font-size: 0.9rem;
+font-size: 0.9rem;
 }
 
 .button {
-        width: 100%;
-        display: block;
+width: 100%;
+display: block;
 }
 
 .sign-in {
-    background-color: #ff94d9;
-    color: white;
+background-color: #ff94d9;
+color: white;
 }
 
 .sign-in:hover {
-    background-color: #70cfff;
+background-color: #70cfff;
 }
 }
 
 .sticky-cart {
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  z-index: 1000;
+position: fixed;
+bottom: 50px;
+right: 50px;
+z-index: 1000;
 }
 .sticky-cart .btn {
-  padding: 10px 20px;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+padding: 10px 20px;
+font-weight: bold;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .cart-txt {
-  text-decoration: none;
-  color: white;
+text-decoration: none;
+color: white;
 }
 
 
@@ -447,64 +447,64 @@ header h1 {
 /*styles for the header */
 /*from adrien*/
 a {
-    text-decoration: none;
-    color: inherit;
+text-decoration: none;
+color: inherit;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 header > img {
-    display: block;
-    max-width: 100%;
+display: block;
+max-width: 100%;
 }
 
 header {
-    background-color: #fff;
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
+background-color: #fff;
+padding: 1rem;
+border-bottom: 1px solid #ddd;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
 }
 
 nav ul {
-    display: flex;
-    gap: 1.5rem;
+display: flex;
+gap: 1.5rem;
 }
 
 .signin-buttons .button {
-    background-color: #fa9dd8;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+background-color: #fa9dd8;
+color: #fff;
+padding: 0.5rem 1rem;
+border-radius: 5px;
 }
 
 @media (max-width: 768px) {
 header > nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
 }
 
 nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        width: 100%;
-        margin-top: 1rem;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+width: 100%;
+margin-top: 1rem;
 }
 
 .signin-buttons {
-        margin-top: 1rem;
+margin-top: 1rem;
 }
 
 }
@@ -512,497 +512,497 @@ nav ul {
 
 
 
-  </style>
+</style>
 </head>
 <body>
-   <header>
-    <nav>
-      <div class="logo">
-        <a href="index.html">
-          <img src="assets/PokemonGoSakuraLogo.png" alt="Pokemon GO Sakura Logo" />
-        </a>
-      </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="index.html">Download</a></li>
-      </ul>
+<header>
+<nav>
+<div class="logo">
+<a href="index.html">
+<img src="assets/PokemonGoSakuraLogo.png" alt="Pokemon GO Sakura Logo" />
+</a>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="store.html">Store</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="index.html">Download</a></li>
+</ul>
 
-      <div class="signin-buttons" id="signin-buttons"></div>
+<div class="signin-buttons" id="signin-buttons"></div>
 
-    </nav>
-  </header>
+</nav>
+</header>
 
-  <nav class="store-nav-bar">
-  <a href="#bundles-limited-jump">Limited Time</a>
-  <a href="#ticket-bundles-jump">Ticket Bundles</a>
-  <a href="#item-bundles-jump">Items</a>
-  <a href="#coins-bundles-jump">PokéCoins</a>
-  <a href="#daily-bundles-jump">Daily Bundles</a>
+<nav class="store-nav-bar">
+<a href="#bundles-limited-jump">Limited Time</a>
+<a href="#ticket-bundles-jump">Ticket Bundles</a>
+<a href="#item-bundles-jump">Items</a>
+<a href="#coins-bundles-jump">PokéCoins</a>
+<a href="#daily-bundles-jump">Daily Bundles</a>
 </nav>
 
- <!--LIMITED TIME BUNDLES-->
-  <section id="bundles-limited" class="store-section">
-  <h2 id="bundles-limited-jump" class="section-title">Limited Time</h2>
-  <!--JULY BUNDLE-->
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">LIMITED-TIME ONLY</div>
-        <div class="product-image text-center">
-          <img src="photos/redBundleJuly/red_bundle_box.webp" alt="red July bundle box" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/redBundleJuly/badge_event_0129.webp" alt="event badge"><span>1</span></div>
-            <div class="item-icon"><img src="photos/redBundleJuly/item_ultra_ball.webp" alt="ultra ball"><span>10</span></div>
-            <div class="item-icon"><img src="photos/redBundleJuly/item_max_revive.webp" alt="max revive"><span>5</span></div>
-            <div class="item-icon"><img src="photos/redBundleJuly/item_max_potion.webp" alt="max potion"><span>5</span></div>
-            <div class="item-icon"><img src="photos/redBundleJuly/item_paid_raid_ticket.webp" alt="raid ticket"><span>1</span></div>
+<!--LIMITED TIME BUNDLES-->
+<section id="bundles-limited" class="store-section">
+<h2 id="bundles-limited-jump" class="section-title">Limited Time</h2>
+<!--JULY BUNDLE-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">LIMITED-TIME ONLY</div>
+<div class="product-image text-center">
+<img src="photos/redBundleJuly/red_bundle_box.webp" alt="red July bundle box" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/redBundleJuly/badge_event_0129.webp" alt="event badge"><span>1</span></div>
+<div class="item-icon"><img src="photos/redBundleJuly/item_ultra_ball.webp" alt="ultra ball"><span>10</span></div>
+<div class="item-icon"><img src="photos/redBundleJuly/item_max_revive.webp" alt="max revive"><span>5</span></div>
+<div class="item-icon"><img src="photos/redBundleJuly/item_max_potion.webp" alt="max potion"><span>5</span></div>
+<div class="item-icon"><img src="photos/redBundleJuly/item_paid_raid_ticket.webp" alt="raid ticket"><span>1</span></div>
 
-          </div>
+</div>
 
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Go Pass Deluxe: July</h3>
-          <p class="product-desc">Can only be purchased 1 time.</p>
-          <button class="btn price-btn" onclick='addToCart({
-            title: "Go Pass Deluxe: July",
-            price: 235,
-            img: "photos/redBundleJuly/red_bundle_box.webp",
-            quantity: 1
-          })'>₱235.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Go Pass Deluxe: July</h3>
+<p class="product-desc">Can only be purchased 1 time.</p>
+<button class="btn price-btn" onclick='addToCart({
+           title: "Go Pass Deluxe: July",
+           price: 235,
+           img: "photos/redBundleJuly/red_bundle_box.webp",
+           quantity: 1
+         })'>₱235.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
-    <!--JULY + 10 RANK BUNDLE-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">LIMITED-TIME ONLY</div>
-        <div class="product-image text-center">
-          <img src="photos/blueBundleJuly/bundle.webp" alt="blue July bundle box" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/blueBundleJuly/badge_event_0129.webp" alt="event badge"><span>1</span></div>
-            <div class="item-icon"><img src="photos/blueBundleJuly/item_event_pass_point_live_ops_02.webp" alt="event pass"><span>1,000</span></div>
-            <div class="item-icon"><img src="photos/blueBundleJuly/item_ultra_ball.webp" alt="ultra ball"><span>10</span></div>
-            <div class="item-icon"><img src="photos/blueBundleJuly/item_max_revive.webp" alt="max revive"><span>5</span></div>
-            <div class="item-icon"><img src="photos/blueBundleJuly/item_max_potion.webp" alt="max potion"><span>5</span></div>
-            <div class="item-icon"><img src="photos/blueBundleJuly/item_paid_raid_ticket.webp" alt="raid ticket"><span>1</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Go Pass Deluxe: July + 10 Rank</h3>
-          <p class="product-desc">Can only be purchased 1 time.</p>
-          <button class="btn price-btn" onclick='addToCart({
-            title: "Go Pass Deluxe: July + 10 Rank",
-            price: 289,
-            img: "photos/blueBundleJuly/bundle.webp",
-            quantity: 1
-          })'>₱289.00</button>
-      </div>
-    </div>
-  </div>
+<!--JULY + 10 RANK BUNDLE-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">LIMITED-TIME ONLY</div>
+<div class="product-image text-center">
+<img src="photos/blueBundleJuly/bundle.webp" alt="blue July bundle box" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/blueBundleJuly/badge_event_0129.webp" alt="event badge"><span>1</span></div>
+<div class="item-icon"><img src="photos/blueBundleJuly/item_event_pass_point_live_ops_02.webp" alt="event pass"><span>1,000</span></div>
+<div class="item-icon"><img src="photos/blueBundleJuly/item_ultra_ball.webp" alt="ultra ball"><span>10</span></div>
+<div class="item-icon"><img src="photos/blueBundleJuly/item_max_revive.webp" alt="max revive"><span>5</span></div>
+<div class="item-icon"><img src="photos/blueBundleJuly/item_max_potion.webp" alt="max potion"><span>5</span></div>
+<div class="item-icon"><img src="photos/blueBundleJuly/item_paid_raid_ticket.webp" alt="raid ticket"><span>1</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Go Pass Deluxe: July + 10 Rank</h3>
+<p class="product-desc">Can only be purchased 1 time.</p>
+<button class="btn price-btn" onclick='addToCart({
+           title: "Go Pass Deluxe: July + 10 Rank",
+           price: 289,
+           img: "photos/blueBundleJuly/bundle.webp",
+           quantity: 1
+         })'>₱289.00</button>
+</div>
+</div>
+</div>
 <br>
-  <!--JULY + 10 RANK ULTRA TICKET BOX BUNDLE-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">LIMITED-TIME ONLY</div>
-        <div class="product-image text-center">
-          <img src="photos/yellowJulyBundle/bundle.webp" alt="yellow July bundle box" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/yellowJulyBundle/badge_event_0129.webp" alt="event badge"><span>1</span></div>
-            <div class="item-icon"><img src="photos/yellowJulyBundle/item_event_pass_point_live_ops_02.webp" alt="event pass"><span>1,000</span></div>
-            <div class="item-icon"><img src="photos/yellowJulyBundle/item_ultra_ball.webp" alt="ultra ball"><span>20</span></div>
-            <div class="item-icon"><img src="photos/yellowJulyBundle/item_max_revive.webp" alt="max revive"><span>10</span></div>
-            <div class="item-icon"><img src="photos/yellowJulyBundle/item_max_potion.webp" alt="max potion"><span>10</span></div>
-            <div class="item-icon"><img src="photos/yellowJulyBundle/item_paid_raid_ticket.webp" alt="raid ticket"><span>2</span></div>
-            <div class="item-icon"><img src="photos/yellowJulyBundle/item_incubator_basic.webp" alt="basic incubator"><span>1</span></div>
-            <div class="item-icon"><img src="photos/yellowJulyBundle/item_incubator_super.webp" alt="super incubator"><span>1</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Go Pass Deluxe: July + 10 Rank Ultra Ticket Box</h3>
-          <p class="product-desc">Can only be purchased 1 time.</p>
-          <button class="btn price-btn" onclick='addToCart({
-            title: "Go Pass Deluxe: July + 10 Rank Ultra Ticket Box",
-            price: 439,
-            img: "photos/yellowJulyBundle/bundle.webp",
-            quantity: 1
-          })' >₱439.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--JULY + 10 RANK ULTRA TICKET BOX BUNDLE-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">LIMITED-TIME ONLY</div>
+<div class="product-image text-center">
+<img src="photos/yellowJulyBundle/bundle.webp" alt="yellow July bundle box" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/yellowJulyBundle/badge_event_0129.webp" alt="event badge"><span>1</span></div>
+<div class="item-icon"><img src="photos/yellowJulyBundle/item_event_pass_point_live_ops_02.webp" alt="event pass"><span>1,000</span></div>
+<div class="item-icon"><img src="photos/yellowJulyBundle/item_ultra_ball.webp" alt="ultra ball"><span>20</span></div>
+<div class="item-icon"><img src="photos/yellowJulyBundle/item_max_revive.webp" alt="max revive"><span>10</span></div>
+<div class="item-icon"><img src="photos/yellowJulyBundle/item_max_potion.webp" alt="max potion"><span>10</span></div>
+<div class="item-icon"><img src="photos/yellowJulyBundle/item_paid_raid_ticket.webp" alt="raid ticket"><span>2</span></div>
+<div class="item-icon"><img src="photos/yellowJulyBundle/item_incubator_basic.webp" alt="basic incubator"><span>1</span></div>
+<div class="item-icon"><img src="photos/yellowJulyBundle/item_incubator_super.webp" alt="super incubator"><span>1</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Go Pass Deluxe: July + 10 Rank Ultra Ticket Box</h3>
+<p class="product-desc">Can only be purchased 1 time.</p>
+<button class="btn price-btn" onclick='addToCart({
+           title: "Go Pass Deluxe: July + 10 Rank Ultra Ticket Box",
+           price: 439,
+           img: "photos/yellowJulyBundle/bundle.webp",
+           quantity: 1
+         })' >₱439.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 <hr>
 </section>
 
 <!--TICKET BUNDLES-->
-  <section id="ticket-bundles" class="store-section">
-    <h2 id="ticket-bundles-jump">Ticket Bundles</h2>
+<section id="ticket-bundles" class="store-section">
+<h2 id="ticket-bundles-jump">Ticket Bundles</h2>
 
-  <!--QUAXLY COMMUNITY DAY ULTRA TICKET BOX-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card ticket-bundle">
-        <div class="limited-banner">LIMITED-TIME ONLY</div>
-        <div class="product-image text-center">
-          <img src="photos/ticketBundles/bundle2.webp" alt="white bundle box" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/ticketBundles/item_event_ticket_03.webp" alt="pink event ticket"><span>1</span></div>
-            <div class="item-icon"><img src="photos/ticketBundles/item_ultra_ball.webp" alt="ultra ball"><span>5</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Quaxly Community Day Ultra Ticket Box</h3>
-          <p class="product-desc">Can only be purchased 1 time.</p>
-          <button class="btn price-btn" onclick='addToCart({
-            title: "Quaxly Community Day Ultra Ticket Box",
-            price: 59,
-            img: "photos/ticketBundles/bundle2.webp",
-            quantity: 1
-          })' >₱59.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<br>
-    <!--WATER FESTIVAL ULTRA TICKET BOX-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card ticket-bundle">
-        <div class="limited-banner">LIMITED-TIME ONLY</div>
-        <div class="product-image text-center">
-          <img src="photos/ticketBundles/bundle.webp" alt="blue bundle box" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/ticketBundles/item_event_ticket_07.webp" alt="white event ticket"><span>1</span></div>
-            <div class="item-icon"><img src="photos/ticketBundles/item_star_piece.webp" alt="star piece"><span>1</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Water Festival Ultra Ticket Box</h3>
-          <p class="product-desc">Can only be purchased 1 time.</p>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Quaxly Community Day Ultra Ticket Box",
-            price: 149,
-            img: "photos/ticketBundles/bundle2.webp",
-            quantity: 1
-          })'>₱149.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--QUAXLY COMMUNITY DAY ULTRA TICKET BOX-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card ticket-bundle">
+<div class="limited-banner">LIMITED-TIME ONLY</div>
+<div class="product-image text-center">
+<img src="photos/ticketBundles/bundle2.webp" alt="white bundle box" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/ticketBundles/item_event_ticket_03.webp" alt="pink event ticket"><span>1</span></div>
+<div class="item-icon"><img src="photos/ticketBundles/item_ultra_ball.webp" alt="ultra ball"><span>5</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Quaxly Community Day Ultra Ticket Box</h3>
+<p class="product-desc">Can only be purchased 1 time.</p>
+<button class="btn price-btn" onclick='addToCart({
+           title: "Quaxly Community Day Ultra Ticket Box",
+           price: 59,
+           img: "photos/ticketBundles/bundle2.webp",
+           quantity: 1
+         })' >₱59.00</button>
+</div>
+</div>
+</div>
+</div>
 
 <br>
+<!--WATER FESTIVAL ULTRA TICKET BOX-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card ticket-bundle">
+<div class="limited-banner">LIMITED-TIME ONLY</div>
+<div class="product-image text-center">
+<img src="photos/ticketBundles/bundle.webp" alt="blue bundle box" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/ticketBundles/item_event_ticket_07.webp" alt="white event ticket"><span>1</span></div>
+<div class="item-icon"><img src="photos/ticketBundles/item_star_piece.webp" alt="star piece"><span>1</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Water Festival Ultra Ticket Box</h3>
+<p class="product-desc">Can only be purchased 1 time.</p>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Quaxly Community Day Ultra Ticket Box",
+           price: 149,
+           img: "photos/ticketBundles/bundle2.webp",
+           quantity: 1
+         })'>₱149.00</button>
+</div>
+</div>
+</div>
+</div>
 
-  <!--G-MAX LARPAS MAX BATTLE DAY ULTRA TICKET BOX-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card ticket-bundle">
-        <div class="limited-banner">LIMITED-TIME ONLY</div>
-        <div class="product-image text-center">
-          <img src="photos/ticketBundles/bundle3.webp" alt="bundle box" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/ticketBundles/item_event_ticket_08.webp" alt="white event ticket"><span>1</span></div>
-            <div class="item-icon"><img src="photos/ticketBundles/item_mp_replenish.webp" alt="mp replenish"><span>1</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">G-MAX Larpas Max Bundle Day Ultra Ticket Box</h3>
-          <p class="product-desc">Can only be purchased 1 time.</p>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "G-MAX Larpas Max Bundle Day Ultra Ticket Box",
-            price: 149,
-            img: "photos/ticketBundles/bundle3.webp",
-            quantity: 1
-          })'>₱149.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<br>
+
+<!--G-MAX LARPAS MAX BATTLE DAY ULTRA TICKET BOX-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card ticket-bundle">
+<div class="limited-banner">LIMITED-TIME ONLY</div>
+<div class="product-image text-center">
+<img src="photos/ticketBundles/bundle3.webp" alt="bundle box" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/ticketBundles/item_event_ticket_08.webp" alt="white event ticket"><span>1</span></div>
+<div class="item-icon"><img src="photos/ticketBundles/item_mp_replenish.webp" alt="mp replenish"><span>1</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">G-MAX Larpas Max Bundle Day Ultra Ticket Box</h3>
+<p class="product-desc">Can only be purchased 1 time.</p>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "G-MAX Larpas Max Bundle Day Ultra Ticket Box",
+           price: 149,
+           img: "photos/ticketBundles/bundle3.webp",
+           quantity: 1
+         })'>₱149.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 <hr>
-  </section>
+</section>
 
 <!--ITEMS BUNDLES-->
-  <section id="itmes-bundles" class="store-section">
-  <h2 id="item-bundles-jump" class="section-title">Items</h2>
+<section id="itmes-bundles" class="store-section">
+<h2 id="item-bundles-jump" class="section-title">Items</h2>
 
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">FEATURED</div>
-        <div class="product-image text-center">
-          <img src="photos/items/1_mp_rrp.webp" alt="max particle pack + remote raid pass" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_mp_replenish.webp" alt="replenish"><span>1</span></div>
-            <div class="item-icon"><img src="photos/items/raid_pass_blue.webp" alt="raid pass"><span>1</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Max Particle Pack + Remote Raid Pass</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Max Particle + Remote Raid Pass",
-            price: 88,
-            img: "photos/ticketBundles/bundle3.webp",
-            quantity: 1
-          })'>₱88.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">FEATURED</div>
+<div class="product-image text-center">
+<img src="photos/items/1_mp_rrp.webp" alt="max particle pack + remote raid pass" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_mp_replenish.webp" alt="replenish"><span>1</span></div>
+<div class="item-icon"><img src="photos/items/raid_pass_blue.webp" alt="raid pass"><span>1</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Max Particle Pack + Remote Raid Pass</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Max Particle + Remote Raid Pass",
+           price: 88,
+           img: "photos/ticketBundles/bundle3.webp",
+           quantity: 1
+         })'>₱88.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">FEATURED</div>
-        <div class="product-image text-center">
-          <img src="photos/items/3_mp_rrp.webp" alt="3 max particle pack + 3 remote raid pass" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_mp_replenish.webp" alt="replenish"><span>3</span></div>
-            <div class="item-icon"><img src="photos/items/raid_pass_blue.webp" alt="raid pass"><span>3</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">3 Max Particle Pack + 3 Remote Raid Pass</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "3 Max Particle + 3 Remote Raid Pass",
-            price: 235,
-            img: "photos/items/3_mp_rrp.webp",
-            quantity: 1
-          })'>₱235.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<br>
-
-
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="product-image text-center">
-          <img src="photos/items/luckyegg.webp" alt="lucky eggs" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_lucky_egg.webp" alt="lucky egg"><span>8</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Lucky Egg</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Luck Egg",
-            price: 149,
-            img: "photos/items/luckyegg.webp",
-            quantity: 1
-          })'>₱149.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<br>
-
-
-
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="product-image text-center">
-          <img src="photos/items/starpieces.webp" alt="star pieces" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_star_piece.webp" alt="replenish"><span>8</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Star Piece</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Star Pieces",
-            price: 175,
-            img: "photos/items/luckyegg.webp",
-            quantity: 1
-          })'>₱175.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<br>
-
-
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">POPULAR</div>
-        <div class="product-image text-center">
-          <img src="photos/items/raid_pass_blue.webp" alt=" remote raid pass" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/raid_pass_blue.webp" alt="raid pass"><span>2</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Remote Raid Pass</h3>
-          <button class="btn price-btn"   onclick='addToCart({
-            title: "Remote Raid Pass",
-            price: 88,
-            img: "photos/items/raid_pass_blue.webp",
-            quantity: 1
-          })'>₱88.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">FEATURED</div>
+<div class="product-image text-center">
+<img src="photos/items/3_mp_rrp.webp" alt="3 max particle pack + 3 remote raid pass" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_mp_replenish.webp" alt="replenish"><span>3</span></div>
+<div class="item-icon"><img src="photos/items/raid_pass_blue.webp" alt="raid pass"><span>3</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">3 Max Particle Pack + 3 Remote Raid Pass</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "3 Max Particle + 3 Remote Raid Pass",
+           price: 235,
+           img: "photos/items/3_mp_rrp.webp",
+           quantity: 1
+         })'>₱235.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
 
 <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">POPULAR</div>
-        <div class="product-image text-center">
-          <img src="photos/items/item_pokemon_storage_upgrade.webp" alt="pokemon storage" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_pokemon_storage_upgrade.webp" alt="pokemon storage"><span>1</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Pokémon Storage</h3>
-          <button class="btn price-btn"   onclick='addToCart({
-            title: "Pokémon Storage",
-            price: 59,
-            img: "photos/items/item_pokemon_storage_upgrade.webp",
-            quantity: 1
-          })'>₱59.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<br>
-
-
-<div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="limited-banner">POPULAR</div>
-        <div class="product-image text-center">
-          <img src="photos/items/item_item_storage_upgrade.webp" alt="item bag" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_item_storage_upgrade.webp" alt="item bag"><span>1</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Item Bag</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Item Bag",
-            price: 59,
-            img: "photos/items/item_pokemon_storage_upgrade.webp",
-            quantity: 1
-          })'>₱59.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<br>
-
-
-<div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="product-image text-center">
-          <img src="photos/items/item_max_revive.webp" alt="max revive" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_max_revive.webp" alt="max revive"><span>6</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Max Revive</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Max Revive",
-            price: 59,
-            img: "photos/items/item_max_revive.webp",
-            quantity: 1
-          })'>₱59.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="product-image text-center">
+<img src="photos/items/luckyegg.webp" alt="lucky eggs" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_lucky_egg.webp" alt="lucky egg"><span>8</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Lucky Egg</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Luck Egg",
+           price: 149,
+           img: "photos/items/luckyegg.webp",
+           quantity: 1
+         })'>₱149.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
 
 
 <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="product-image text-center">
-          <img src="photos/items/item_paid_raid_ticket.webp" alt="prem battle pass" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_paid_raid_ticket.webp" alt="prem battle pass"><span>3</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Platinum Battle Pass</h3>
-          <button class="btn price-btn"   
-          onclick='addToCart({
-            title: "Platinum Battle Pass",
-            price: 88,
-            img: "photos/items/item_paid_raid_ticket.webp",
-            quantity: 1
-          })' >₱88.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="product-image text-center">
+<img src="photos/items/starpieces.webp" alt="star pieces" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_star_piece.webp" alt="replenish"><span>8</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Star Piece</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Star Pieces",
+           price: 175,
+           img: "photos/items/luckyegg.webp",
+           quantity: 1
+         })'>₱175.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
 
 <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="product-image text-center">
-          <img src="photos/items/item_mp_replenish.webp" alt="replenish" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_mp_replenish.webp" alt="replenish"><span>6</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Max Particle Pack</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Max Particle Pack",
-            price: 235,
-            img: "photos/items/item_mp_replenish.webp",
-            quantity: 1
-          })'>₱235.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">POPULAR</div>
+<div class="product-image text-center">
+<img src="photos/items/raid_pass_blue.webp" alt=" remote raid pass" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/raid_pass_blue.webp" alt="raid pass"><span>2</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Remote Raid Pass</h3>
+<button class="btn price-btn"   onclick='addToCart({
+           title: "Remote Raid Pass",
+           price: 88,
+           img: "photos/items/raid_pass_blue.webp",
+           quantity: 1
+         })'>₱88.00</button>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">POPULAR</div>
+<div class="product-image text-center">
+<img src="photos/items/item_pokemon_storage_upgrade.webp" alt="pokemon storage" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_pokemon_storage_upgrade.webp" alt="pokemon storage"><span>1</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Pokémon Storage</h3>
+<button class="btn price-btn"   onclick='addToCart({
+           title: "Pokémon Storage",
+           price: 59,
+           img: "photos/items/item_pokemon_storage_upgrade.webp",
+           quantity: 1
+         })'>₱59.00</button>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="limited-banner">POPULAR</div>
+<div class="product-image text-center">
+<img src="photos/items/item_item_storage_upgrade.webp" alt="item bag" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_item_storage_upgrade.webp" alt="item bag"><span>1</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Item Bag</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Item Bag",
+           price: 59,
+           img: "photos/items/item_pokemon_storage_upgrade.webp",
+           quantity: 1
+         })'>₱59.00</button>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="product-image text-center">
+<img src="photos/items/item_max_revive.webp" alt="max revive" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_max_revive.webp" alt="max revive"><span>6</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Max Revive</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Max Revive",
+           price: 59,
+           img: "photos/items/item_max_revive.webp",
+           quantity: 1
+         })'>₱59.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
 
 
 <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card limited-time">
-        <div class="product-image text-center">
-          <img src="photos/items/item_max_boost.webp" alt="max mushroom" class="main-bundle">
-          <div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
-            <div class="item-icon"><img src="photos/items/item_max_boost.webp" alt="max mushroom "><span>3</span></div>
-          </div>
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Max Mushroom</h3>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "Max Mushroom",
-            price: 289,
-            img: "photos/items/item_max_boost.webp",
-            quantity: 1
-          })'>₱289.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="product-image text-center">
+<img src="photos/items/item_paid_raid_ticket.webp" alt="prem battle pass" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_paid_raid_ticket.webp" alt="prem battle pass"><span>3</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Platinum Battle Pass</h3>
+<button class="btn price-btn"   
+onclick='addToCart({
+           title: "Platinum Battle Pass",
+           price: 88,
+           img: "photos/items/item_paid_raid_ticket.webp",
+           quantity: 1
+         })' >₱88.00</button>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="product-image text-center">
+<img src="photos/items/item_mp_replenish.webp" alt="replenish" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_mp_replenish.webp" alt="replenish"><span>6</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Max Particle Pack</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Max Particle Pack",
+           price: 235,
+           img: "photos/items/item_mp_replenish.webp",
+           quantity: 1
+         })'>₱235.00</button>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+
+
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card limited-time">
+<div class="product-image text-center">
+<img src="photos/items/item_max_boost.webp" alt="max mushroom" class="main-bundle">
+<div class="bundle-items d-flex justify-content-center flex-wrap gap-2 mt-3">
+<div class="item-icon"><img src="photos/items/item_max_boost.webp" alt="max mushroom "><span>3</span></div>
+</div>
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Max Mushroom</h3>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "Max Mushroom",
+           price: 289,
+           img: "photos/items/item_max_boost.webp",
+           quantity: 1
+         })'>₱289.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 <hr>
 
@@ -1012,159 +1012,159 @@ nav ul {
 
 <!-- PokéCoins -->
 <section id="coins-bundles" class="store-section">
-    <h2 id="coins-bundles-jump">PokéCoins</h2>
+<h2 id="coins-bundles-jump">PokéCoins</h2>
 
-  <!--110coins-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card coins">
-        <div class="product-image text-center">
-          <img src="photos/pokecoins/coin-bundle-xxsmall.webp" alt="xxsmall coin bundle" class="main-bundle">
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">110 PokéCoins</h3>
-          <p class="product-desc">10 Web Store Bonus Coins</p>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "110 PokéCoins",
-            price: 29,
-            img: "photos/pokecoins/coin-bundle-xxsmall.webp",
-            quantity: 1
-          })'>₱29.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--110coins-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card coins">
+<div class="product-image text-center">
+<img src="photos/pokecoins/coin-bundle-xxsmall.webp" alt="xxsmall coin bundle" class="main-bundle">
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">110 PokéCoins</h3>
+<p class="product-desc">10 Web Store Bonus Coins</p>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "110 PokéCoins",
+           price: 29,
+           img: "photos/pokecoins/coin-bundle-xxsmall.webp",
+           quantity: 1
+         })'>₱29.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
-   <!--600coins-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card coins">
-        <div class="product-image text-center">
-          <img src="photos/pokecoins/coin-bundle-xsmall.webp" alt="xsmall coin bundle" class="main-bundle">
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">600 PokéCoins</h3>
-          <p class="product-desc">50 Web Store Bonus Coins</p>
-          <button class="btn price-btn"   onclick='addToCart({
-            title: "600 PokéCoins",
-            price: 149,
-            img: "photos/pokecoins/coin-bundle-xsmall.webp",
-            quantity: 1
-          })'>₱149.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--600coins-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card coins">
+<div class="product-image text-center">
+<img src="photos/pokecoins/coin-bundle-xsmall.webp" alt="xsmall coin bundle" class="main-bundle">
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">600 PokéCoins</h3>
+<p class="product-desc">50 Web Store Bonus Coins</p>
+<button class="btn price-btn"   onclick='addToCart({
+           title: "600 PokéCoins",
+           price: 149,
+           img: "photos/pokecoins/coin-bundle-xsmall.webp",
+           quantity: 1
+         })'>₱149.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
-   <!--1,300coins-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card coins">
-        <div class="product-image text-center">
-          <img src="photos/pokecoins/coin-bundle-small_v2.webp" alt="small coin bundle" class="main-bundle">
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">1,300 PokéCoins</h3>
-          <p class="product-desc">100 Web Store Bonus Coins</p>
-          <button class="btn price-btn"   onclick='addToCart({
-            title: "1,300 PokéCoins",
-            price: 289,
-            img: "photos/pokecoins/coin-bundle-small_v2.webp",
-            quantity: 1
-          })'>₱289.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--1,300coins-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card coins">
+<div class="product-image text-center">
+<img src="photos/pokecoins/coin-bundle-small_v2.webp" alt="small coin bundle" class="main-bundle">
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">1,300 PokéCoins</h3>
+<p class="product-desc">100 Web Store Bonus Coins</p>
+<button class="btn price-btn"   onclick='addToCart({
+           title: "1,300 PokéCoins",
+           price: 289,
+           img: "photos/pokecoins/coin-bundle-small_v2.webp",
+           quantity: 1
+         })'>₱289.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
-  <!--2,700coins-->
-    <div class="row justify-content-center">
-    <div >
-      <div class="product-card coins">
-        <div class="product-image text-center">
-          <img src="photos/pokecoins/coin-bundle-medium_v2.webp" alt="medium coin bundle" class="main-bundle">
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">2,700 PokéCoins</h3>
-          <p class="product-desc">200 Web Store Bonus Coins</p>
-          <button class="btn price-btn"   onclick='addToCart({
-            title: "2,700 PokéCoins",
-            price: 589,
-            img: "photos/pokecoins/coin-bundle-medium_v2.webp",
-            quantity: 1
-          })'>₱589.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--2,700coins-->
+<div class="row justify-content-center">
+<div >
+<div class="product-card coins">
+<div class="product-image text-center">
+<img src="photos/pokecoins/coin-bundle-medium_v2.webp" alt="medium coin bundle" class="main-bundle">
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">2,700 PokéCoins</h3>
+<p class="product-desc">200 Web Store Bonus Coins</p>
+<button class="btn price-btn"   onclick='addToCart({
+           title: "2,700 PokéCoins",
+           price: 589,
+           img: "photos/pokecoins/coin-bundle-medium_v2.webp",
+           quantity: 1
+         })'>₱589.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
-  <!--5,600coins-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card coins">
-        <div class="product-image text-center">
-          <img src="photos/pokecoins/coin-bundle-large-v2.webp" alt="large coin bundle" class="main-bundle">
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">5,600 PokéCoins</h3>
-          <p class="product-desc">400 Web Store Bonus Coins</p>
-          <button class="btn price-btn"   onclick='addToCart({
-            title: "110 PokéCoins",
-            price: 1170,
-            img: "photos/pokecoins/coin-bundle-xxsmall.webp",
-            quantity: 1
-          })'>₱1,170.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--5,600coins-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card coins">
+<div class="product-image text-center">
+<img src="photos/pokecoins/coin-bundle-large-v2.webp" alt="large coin bundle" class="main-bundle">
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">5,600 PokéCoins</h3>
+<p class="product-desc">400 Web Store Bonus Coins</p>
+<button class="btn price-btn"   onclick='addToCart({
+           title: "110 PokéCoins",
+           price: 1170,
+           img: "photos/pokecoins/coin-bundle-xxsmall.webp",
+           quantity: 1
+         })'>₱1,170.00</button>
+</div>
+</div>
+</div>
+</div>
 <br>
 
-  <!--15,500coins-->
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="product-card coins">
-        <div class="product-image text-center">
-          <img src="photos/pokecoins/coin-bundle-xlarge.webp" alt="xlarge coin bundle" class="main-bundle">
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">15, 500 PokéCoins</h3>
-          <p class="product-desc">1,000 Web Store Bonus Coins</p>
-          <button class="btn price-btn"  onclick='addToCart({
-            title: "15,500 PokéCoins",
-            price: 2950,
-            img: "photos/pokecoins/coin-bundle-xlarge.webp",
-            quantity: 1
-          })'>₱2,950.00</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  </section>
+<!--15,500coins-->
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="product-card coins">
+<div class="product-image text-center">
+<img src="photos/pokecoins/coin-bundle-xlarge.webp" alt="xlarge coin bundle" class="main-bundle">
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">15, 500 PokéCoins</h3>
+<p class="product-desc">1,000 Web Store Bonus Coins</p>
+<button class="btn price-btn"  onclick='addToCart({
+           title: "15,500 PokéCoins",
+           price: 2950,
+           img: "photos/pokecoins/coin-bundle-xlarge.webp",
+           quantity: 1
+         })'>₱2,950.00</button>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 <br>
 <hr>
 </section>
 
 <!--DAILY BUNDLES-->
-  <section id="daily-bundles" class="store-section">
-  <h2 id="daily-bundles-jump" class="section-title">Daily Bundles</h2>
+<section id="daily-bundles" class="store-section">
+<h2 id="daily-bundles-jump" class="section-title">Daily Bundles</h2>
 
 
-      <div class="product-card limited-time">
-        <div class="product-image text-center">
-          <img src="photos/ml_default_sku_id.webp" alt="mystery boxes" id="mysterybox" class="main-bundle">
-        </div>
-        <div class="product-details text-center mt-4">
-          <h3 class="product-title">Mystery Boxes</h3>
-          <h4 class="product-desc">3 Daily Bundles</h4>
-          <a href="https://e7528.github.io/project/signin.html"> <button class="btn price-btn">Sign in to view</button> </a>
-        </div>
-      </div>
+<div class="product-card limited-time">
+<div class="product-image text-center">
+<img src="photos/ml_default_sku_id.webp" alt="mystery boxes" id="mysterybox" class="main-bundle">
+</div>
+<div class="product-details text-center mt-4">
+<h3 class="product-title">Mystery Boxes</h3>
+<h4 class="product-desc">3 Daily Bundles</h4>
+<a href="https://e7528.github.io/project/signin.html"> <button class="btn price-btn">Sign in to view</button> </a>
+</div>
+</div>
 
 <br>
 <hr>
@@ -1172,42 +1172,42 @@ nav ul {
 
 
 <div class="sticky-cart">
-  <button class="btn cart-btn" onclick="goToCart()">
-   <a class="cart-txt"><h1> CART </h1></a>
-   <h1> CART </h1>
-  </button>
+<button class="btn cart-btn" onclick="goToCart()">
+   <a href"cart.html"><h1> CART </h1></a>
+   <a href="cart.html"><h1> CART </h1></a>
+</button>
 </div>
 
 
 <footer>
-    <div class="copyright">
-      <p>This is a student project and not affiliated with Niantic, Nintendo, or The Pokémon Company.</p>
-      <p>All Pokémon images and trademarks belong to their respective owners.</p>
-      <p>©2025 Niantic, Inc. ©2025 Pokemon. ©1995–2025 Nintendo / Creatures Inc. / GAME FREAK inc. Pokemon and Pokemon character names are trademarks of Nintendo.</p>
-    </div>
-  </footer>
+<div class="copyright">
+<p>This is a student project and not affiliated with Niantic, Nintendo, or The Pokémon Company.</p>
+<p>All Pokémon images and trademarks belong to their respective owners.</p>
+<p>©2025 Niantic, Inc. ©2025 Pokemon. ©1995–2025 Nintendo / Creatures Inc. / GAME FREAK inc. Pokemon and Pokemon character names are trademarks of Nintendo.</p>
+</div>
+</footer>
 
 
 
 <script>
 
 
-  function addToCart(item) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+function addToCart(item) {
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    const existingIndex = cart.findIndex(i => i.title === item.title);
-    if (existingIndex !== -1) {
-      cart[existingIndex].quantity += 1;
-    } else {
-      cart.push(item);
-    }
+const existingIndex = cart.findIndex(i => i.title === item.title);
+if (existingIndex !== -1) {
+cart[existingIndex].quantity += 1;
+} else {
+cart.push(item);
+}
 
-    localStorage.setItem('cart', JSON.stringify(cart));
+localStorage.setItem('cart', JSON.stringify(cart));
 
-  }
+}
 </script>
- <!-- JOMER SCRIPT  -->
- <script src="signinResponsive.js"></script>
+<!-- JOMER SCRIPT  -->
+<script src="signinResponsive.js"></script>
 
 
 </body>
