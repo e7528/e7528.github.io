@@ -488,9 +488,8 @@ document.querySelector('.checkout-btn').addEventListener('click', () => {
   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
 
   if (isLoggedIn) {
-    alert("Thank you for purchasing!");
-    localStorage.removeItem('cart'); 
-    renderCart(); 
+    localStorage.removeItem('cart');
+    window.location.href = 'thankyou.html';
   } else {
     alert("Please sign in before checking out.");
     localStorage.setItem('afterLoginRedirect', window.location.href);
