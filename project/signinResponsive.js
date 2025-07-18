@@ -115,7 +115,7 @@ if (signinButtons) {
 
     const welcome = document.createElement('span');
     welcome.textContent = `Welcome, ${username}`;
-    welcome.className = 'welcome-text'; // ✅ Use CSS class for color
+    welcome.className = 'welcome-text'; 
     welcome.style.marginRight = '10px';
 
     const logoutBtn = document.createElement('button');
