@@ -1,0 +1,72 @@
+(() => {
+  const PIXEL_IDS = document.currentScript.getAttribute('data-pixel-ids')
+  const ACCEPTED_COOKIES = document.currentScript.getAttribute('data-accepted-cookies') === 'true'
+
+  const pixelIds = PIXEL_IDS.split(',')
+
+  /* eslint-disable */
+  function initializeFacebookPixel(f, b, e, v, n, t, s) {
+    if (f.fbq) return
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    }
+    if (!f._fbq) f._fbq = n
+    n.push = n
+    n.loaded = !0
+    n.version = '2.0'
+    n.queue = []
+    t = b.createElement(e)
+    t.async = !0
+    t.src = v
+    s = b.getElementsByTagName(e)[0]
+    s.parentNode.insertBefore(t, s)
+  }
+
+  // Listener for ark cookie consent change
+  window.addEventListener('arkCookiebarConsentChange', (event) => {
+    if (!event.detail) {
+      window?.fbq?.('consent', 'revoke')
+      return;
+    }
+
+    initializeFacebookPixel(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    )
+
+    pixelIds.forEach((pixelId) => {
+      if (pixelId === '') {
+        return
+      }
+
+      window.fbq('init', pixelId)
+      window.fbq('dataProcessingOptions', ['LDU'], 0, 0)
+      window.fbq('track', 'PageView')
+    })
+  });
+
+  // cookie banner has already been rejected previously don't trigger init
+  if (!ACCEPTED_COOKIES) {
+    return;
+  }
+
+  // init and track if enabled
+  initializeFacebookPixel(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  )
+
+  pixelIds.forEach((pixelId) => {
+    if (pixelId === '') {
+      return
+    }
+
+    window.fbq('init', pixelId)
+    window.fbq('dataProcessingOptions', ['LDU'], 0, 0)
+    window.fbq('track', 'PageView')
+  })
+})()
