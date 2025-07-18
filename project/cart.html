@@ -512,6 +512,34 @@ window.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('afterLoginRedirect');
     alert("Welcome back! You're now signed in.");
   }
+
+function renderCart() {
+  const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartItemsContainer = document.getElementById('cart-items');
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+
+  cartData.forEach((item, index) => {
+    total += item.price * item.quantity;
+    cartItemsContainer.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.img}" alt="${item.title}" />
+        <div class="cart-item-details">
+          <h5>${item.title}</h5>
+          <p>₱${item.price.toFixed(2)}</p>
+        </div>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity(${index})">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="increaseQuantity(${index})">+</button>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById('total-price').innerText = `₱${total.toFixed(2)}`;
+
+  updateCartCount();
 });
   
 </script>
