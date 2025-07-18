@@ -119,3 +119,51 @@ footer select {
   margin-top: 10px;
   padding: 4px;
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 95%;
+    padding: 20px 15px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .form input,
+  .form select,
+  .form input[type="date"] {
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 15px 10px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  .form input,
+  .form select,
+  .form input[type="date"] {
+    font-size: 0.9rem;
+  }
