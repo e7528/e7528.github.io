@@ -183,16 +183,10 @@
 
   renderCart();
 
-  // Handle Checkout Button Click
   document.querySelector('.checkout-btn').addEventListener('click', () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-    if (!isLoggedIn) {
-      alert("Please sign in before checking out.");
-      window.location.href = 'login.html'; // Replace with your login page path
-    } else {
-      window.location.href = 'checkout.html'; // Replace with your checkout page
-    }
+  
   });
 </script>
 </body>
