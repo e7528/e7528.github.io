@@ -1174,6 +1174,7 @@ onclick='addToCart({
 <div class="sticky-cart">
   <button class="btn cart-btn" onclick="goToCart()">
    <a href="cart.html"><h1> CART </h1></a>
+     CART <span id="cart-count">(0)</span>
   </button>
 </div>
 
@@ -1190,20 +1191,37 @@ onclick='addToCart({
 
 <script>
 
-
 function addToCart(item) {
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-const existingIndex = cart.findIndex(i => i.title === item.title);
-if (existingIndex !== -1) {
-cart[existingIndex].quantity += 1;
-} else {
-cart.push(item);
-}
+    const existingIndex = cart.findIndex(i => i.title === item.title);
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push(item);
+    }
 
-localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-}
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountEl = document.getElementById('cart-count');
+    if (cartCountEl) {
+      cartCountEl.textContent = `(${totalItems})`;
+    }
+  }
+
+  function goToCart() {
+    window.location.href = 'cart.html';
+  }
+
+  // Update count on page load
+  window.addEventListener('DOMContentLoaded', updateCartCount);
+           
 </script>
 <!-- JOMER SCRIPT  -->
 <script src="signinResponsive.js"></script>
