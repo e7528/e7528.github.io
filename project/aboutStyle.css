@@ -1,23 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #fae0f0;
-    background-size: cover;
-    color: #333;
-}
-
 header {
     background-color: #fff;
     padding: 1rem;
     border-bottom: 1px solid #ddd;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fae0f0;
+    background-size: cover;
+    color: #333;
 }
 
 .container {
@@ -36,11 +28,31 @@ header h1 {
     width: 90%;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
 .info h2,
 .group-info h2 {
     color: #2c3e50;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
+}
+
+.NavigationLinks li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .member {
@@ -90,25 +102,6 @@ footer {
     gap: 6px;
 }
 
-.SakuraLogo {
-    height: 25px;
-}
-
-.NavigationLinks {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.NavigationLinks li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
 .signin-buttons {
         margin-top: 1rem;
 }
@@ -124,10 +117,24 @@ footer {
     border-radius: 5px;
 }
 
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
 
 @media (max-width: 768px) {
+nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+}
 
-.NavigationLinks {
+nav ul {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
@@ -161,10 +168,6 @@ footer {
 @media (max-width: 480px) {
 header h1 {
         font-size: 1.5rem;
-}
-
-.NavigationLinks li a {
-        font-size: 0.9rem;
 }
 
 .button {
