@@ -486,11 +486,18 @@ nav ul {
 
 document.querySelector('.checkout-btn').addEventListener('click', () => {
   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+  const hasItems = cartData.length > 0;
+
+  if (!hasItems) {
+    alert("Your cart is empty. Add items before checking out.");
+    return; 
+  }
 
   if (isLoggedIn) {
     localStorage.removeItem('cart');
     window.location.href = 'thankyou.html';
-  } else {
+  } 
+  else {
     alert("Please sign in before checking out.");
     localStorage.setItem('afterLoginRedirect', window.location.href);
     window.location.href = 'signin.html';
