@@ -106,40 +106,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ✅ Show login state at top right
-  const signinButtons = document.getElementById('signin-buttons');
-  if (signinButtons) {
-    signinButtons.innerHTML = '';
+const signinButtons = document.getElementById('signin-buttons');
+if (signinButtons) {
+  signinButtons.innerHTML = '';
 
-    if (localStorage.getItem('loggedIn') === 'true') {
-      const username = localStorage.getItem('username') || 'User';
+  if (localStorage.getItem('loggedIn') === 'true') {
+    const username = localStorage.getItem('username') || 'User';
 
-      const welcome = document.createElement('span');
-      welcome.textContent = `Welcome, ${username}`;
-      welcome.style.color = '#fff';
-      welcome.style.marginRight = '10px';
+    const welcome = document.createElement('span');
+    welcome.textContent = `Welcome, ${username}`;
+    welcome.className = 'welcome-text'; // ✅ Use CSS class for color
+    welcome.style.marginRight = '10px';
 
-      const logoutBtn = document.createElement('button');
-      logoutBtn.id = 'logout-btn';
-      logoutBtn.className = 'button';
-      logoutBtn.textContent = 'Log Out';
+    const logoutBtn = document.createElement('button');
+    logoutBtn.id = 'logout-btn';
+    logoutBtn.className = 'button';
+    logoutBtn.textContent = 'Log Out';
 
-      logoutBtn.addEventListener('click', () => {
-        localStorage.removeItem('loggedIn');
-        localStorage.removeItem('username');
-        alert('You have been logged out.');
-        window.location.href = 'signin.html';
-      });
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('username');
+      alert('You have been logged out.');
+      window.location.href = 'signin.html';
+    });
 
-      signinButtons.appendChild(welcome);
-      signinButtons.appendChild(logoutBtn);
-    } else {
-      const signInLink = document.createElement('a');
-      signInLink.href = 'signin.html';
-      signInLink.className = 'button';
-      signInLink.textContent = 'Sign In';
-      signinButtons.appendChild(signInLink);
-    }
+    signinButtons.appendChild(welcome);
+    signinButtons.appendChild(logoutBtn);
+  } else {
+    const signInLink = document.createElement('a');
+    signInLink.href = 'signin.html';
+    signInLink.className = 'button';
+    signInLink.textContent = 'Sign In';
+    signinButtons.appendChild(signInLink);
   }
+}
+
 
 
 
