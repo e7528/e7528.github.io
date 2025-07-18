@@ -146,7 +146,15 @@ if (signinButtons) {
     });
 
 
+// Return to Sign In logic (if you have logic here)
+document.getElementById('return-btn').addEventListener('click', () => {
+  window.location.href = 'signin.html';
+});
 
+// ✅ New: Return to Home logic
+document.getElementById('home-btn').addEventListener('click', () => {
+  window.location.href = 'index.html';
+});
 
 
 
