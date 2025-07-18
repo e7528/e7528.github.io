@@ -435,6 +435,9 @@ nav ul {
 
 
 <script>
+
+
+  
   const cartData = JSON.parse(localStorage.getItem('cart')) || [];
 
   function renderCart() {
@@ -481,16 +484,33 @@ nav ul {
 
   renderCart();
 
-  document.querySelector('.checkout-btn').addEventListener('click', () => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+document.querySelector('.checkout-btn').addEventListener('click', () => {
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
 
-    if (!isLoggedIn) {
-      alert("Thank you for your purchase.");
-      href = 'https://e7528.github.io/project/signin.html'; 
-    } else { 
-      href = 'cart.html';
-    }
-  });
+  if (isLoggedIn) {
+    alert("Thank you for purchasing!");
+    localStorage.removeItem('cart'); // Clear cart
+    renderCart(); // Re-render empty cart
+  } else {
+    alert("Please sign in before checking out.");
+    // Store intent to return to cart after sign-in
+    localStorage.setItem('afterLoginRedirect', window.location.href);
+    // Redirect to signin page
+    window.location.href = 'signin.html';
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+  const redirectTarget = localStorage.getItem('afterLoginRedirect');
+
+  if (isLoggedIn && redirectTarget === window.location.href) {
+    // Clear redirect intent after returning
+    localStorage.removeItem('afterLoginRedirect');
+    alert("Welcome back! You're now signed in.");
+  }
+});
+  
 </script>
    <!-- JOMER SCRIPT  -->
  <script src="signinResponsive.js"></script>
