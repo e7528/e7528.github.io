@@ -489,13 +489,11 @@ document.querySelector('.checkout-btn').addEventListener('click', () => {
 
   if (isLoggedIn) {
     alert("Thank you for purchasing!");
-    localStorage.removeItem('cart'); // Clear cart
-    renderCart(); // Re-render empty cart
+    localStorage.removeItem('cart'); 
+    renderCart(); 
   } else {
     alert("Please sign in before checking out.");
-    // Store intent to return to cart after sign-in
     localStorage.setItem('afterLoginRedirect', window.location.href);
-    // Redirect to signin page
     window.location.href = 'signin.html';
   }
 });
@@ -505,13 +503,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const redirectTarget = localStorage.getItem('afterLoginRedirect');
 
   if (isLoggedIn && redirectTarget === window.location.href) {
-    // Clear redirect intent after returning
     localStorage.removeItem('afterLoginRedirect');
     alert("Welcome back! You're now signed in.");
   }
 });
   
 </script>
+
+  
    <!-- JOMER SCRIPT  -->
  <script src="signinResponsive.js"></script>
 </body>
