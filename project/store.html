@@ -488,6 +488,18 @@ nav ul {
     border-radius: 5px;
 }
 
+    
+#cart-count {
+  display: inline-block;
+  background-color: #ff3c3c;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+
 @media (max-width: 768px) {
 header > nav {
         flex-direction: column;
@@ -1177,6 +1189,10 @@ nav ul {
   </button>
 </div>
 
+<div class="signin-buttons" id="signin-buttons"></div>
+<div id="cart-count"></div>
+
+
 
 <footer>
     <div class="copyright">
@@ -1204,6 +1220,38 @@ nav ul {
     localStorage.setItem('cart', JSON.stringify(cart));
     
   }
+
+function renderCart() {
+  const cartItemsContainer = document.getElementById('cart-items');
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+
+  cartData.forEach((item, index) => {
+    total += item.price * item.quantity;
+    cartItemsContainer.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.img}" alt="${item.title}" />
+        <div class="cart-item-details">
+          <h5>${item.title}</h5>
+          <p>₱${item.price.toFixed(2)}</p>
+        </div>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity(${index})">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="increaseQuantity(${index})">+</button>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById('total-price').innerText = `₱${total.toFixed(2)}`;
+
+  // ✅ Add this to update cart count
+  const cartCountContainer = document.getElementById('cart-count');
+  const totalItems = cartData.reduce((sum, item) => sum + item.quantity, 0);
+  cartCountContainer.textContent = `Cart (${totalItems})`;
+}
+
 </script>
  <!-- JOMER SCRIPT  -->
  <script src="signinResponsive.js"></script>
