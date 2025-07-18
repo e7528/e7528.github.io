@@ -1207,15 +1207,28 @@ nav ul {
 <script>
 
 
- function renderCart() {
+function addToCart(item) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingIndex = cart.findIndex(i => i.title === item.title);
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+  }
+
+function renderCart() {
   const cartItemsContainer = document.getElementById('cart-items');
-  const cartData = JSON.parse(localStorage.getItem('cart')) || []; 
   cartItemsContainer.innerHTML = '';
   let total = 0;
 
   cartData.forEach((item, index) => {
     total += item.price * item.quantity;
-    cartItemsContainer.innerHTML += `
+    cartItemsContainer.innerHTML += 
       <div class="cart-item">
         <img src="${item.img}" alt="${item.title}" />
         <div class="cart-item-details">
@@ -1228,17 +1241,15 @@ nav ul {
           <button onclick="increaseQuantity(${index})">+</button>
         </div>
       </div>
-    `;
+    ;
   });
 
-  document.getElementById('total-price').innerText = `₱${total.toFixed(2)}`;
+  document.getElementById('total-price').innerText = ₱${total.toFixed(2)};
 
-  // ✅ Safely update cart count if it exists
+  
   const cartCountContainer = document.getElementById('cart-count');
-  if (cartCountContainer) {
-    const totalItems = cartData.reduce((sum, item) => sum + item.quantity, 0);
-    cartCountContainer.textContent = `Cart (${totalItems})`;
-  }
+  const totalItems = cartData.reduce((sum, item) => sum + item.quantity, 0);
+  cartCountContainer.textContent = Cart (${totalItems});
 }
 
 
