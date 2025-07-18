@@ -129,6 +129,34 @@ footer select,
   margin-top: 15px;
 }
 
+/* ✅ Container pushes Sign In to the right */
+.signin-buttons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* ✅ Shared styles for link & button */
+.signin-buttons .button {
+  background: #f3a6e5;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.signin-buttons .button:hover {
+  background: #ff7ccf;
+}
+
+.welcome-text {
+  margin-right: 10px;
+  font-weight: bold;
+  col
+
 @media (max-width: 768px) {
   body {
     padding: 20px;
