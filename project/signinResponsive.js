@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // --- Signin / Create Account form logic (only on signin.html) ---
   const buttonGroup = document.getElementById('button-group');
   const signinForm = document.getElementById('signin-form');
   const createForm = document.getElementById('create-form');
@@ -98,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'index.html';
   });
 
+  // --- Protect store page ---
   const protectedPages = ['store.html'];
   const isProtectedPage = protectedPages.some(page => window.location.pathname.includes(page));
   if (isProtectedPage && localStorage.getItem('loggedIn') !== 'true') {
@@ -105,46 +107,49 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   }
 
-  // ✅ Show login state at top right
-const signinButtons = document.getElementById('signin-buttons');
-if (signinButtons) {
-  signinButtons.innerHTML = '';
+  // ✅ Show Sign In / Welcome / Log Out at top right (works on ALL pages)
+  const signinButtons = document.getElementById('signin-buttons');
+  if (signinButtons) {
+    signinButtons.innerHTML = '';
 
-  if (localStorage.getItem('loggedIn') === 'true') {
-    const username = localStorage.getItem('username') || 'User';
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
 
-    const welcome = document.createElement('span');
-    welcome.textContent = `Welcome, ${username}`;
-    welcome.className = 'welcome-text'; 
-    welcome.style.marginRight = '10px';
+    if (isLoggedIn) {
+      const username = localStorage.getItem('username') || 'User';
 
-    const logoutBtn = document.createElement('button');
-    logoutBtn.id = 'logout-btn';
-    logoutBtn.className = 'button';
-    logoutBtn.textContent = 'Log Out';
+      const welcome = document.createElement('span');
+      welcome.textContent = `Welcome, ${username}`;
+      welcome.className = 'welcome-text';
+      welcome.style.marginRight = '10px';
 
-    logoutBtn.addEventListener('click', () => {
-      localStorage.removeItem('loggedIn');
-      localStorage.removeItem('username');
-      alert('You have been logged out.');
-      window.location.href = 'signin.html';
-    });
+      const logoutBtn = document.createElement('button');
+      logoutBtn.id = 'logout-btn';
+      logoutBtn.className = 'button';
+      logoutBtn.textContent = 'Log Out';
 
-    signinButtons.appendChild(welcome);
-    signinButtons.appendChild(logoutBtn);
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('username');
+        alert('You have been logged out.');
+        window.location.href = 'signin.html';
+      });
+
+      signinButtons.appendChild(welcome);
+      signinButtons.appendChild(logoutBtn);
+    } else {
+      const signInLink = document.createElement('a');
+      signInLink.href = 'signin.html';
+      signInLink.className = 'button';
+      signInLink.textContent = 'Sign In';
+
+      signinButtons.appendChild(signInLink);
+    }
   } else {
-    const signInLink = document.createElement('a');
-    signInLink.href = 'signin.html';
-    signInLink.className = 'button';
-    signInLink.textContent = 'Sign In';
-    signinButtons.appendChild(signInLink);
+    console.warn('No #signin-buttons found on this page.');
   }
-}
 
-//jfjfjjfjfjfjfjfjjfjfjf
-// 
-
- function addToCart(item) {
+  // --- Example addToCart (keep or adjust for your use) ---
+  window.addToCart = function(item) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const existingIndex = cart.findIndex(i => i.title === item.title);
@@ -156,6 +161,5 @@ if (signinButtons) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
     window.location.href = 'cart.html';
-  }});
-~
-
+  };
+});
