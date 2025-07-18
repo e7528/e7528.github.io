@@ -1185,7 +1185,7 @@ nav ul {
 
 <div class="sticky-cart">
   <button class="btn cart-btn" onclick="goToCart()">
-   <a href="cart.html"><h1> CART </h1></a>
+    🛒 <span id="cart-count">Cart (0)</span>
   </button>
 </div>
 
@@ -1207,22 +1207,9 @@ nav ul {
 <script>
 
 
-  function addToCart(item) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const existingIndex = cart.findIndex(i => i.title === item.title);
-    if (existingIndex !== -1) {
-      cart[existingIndex].quantity += 1;
-    } else {
-      cart.push(item);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-  }
-
-function renderCart() {
+ function renderCart() {
   const cartItemsContainer = document.getElementById('cart-items');
+  const cartData = JSON.parse(localStorage.getItem('cart')) || []; 
   cartItemsContainer.innerHTML = '';
   let total = 0;
 
@@ -1246,11 +1233,14 @@ function renderCart() {
 
   document.getElementById('total-price').innerText = `₱${total.toFixed(2)}`;
 
-  // ✅ Add this to update cart count
+  // ✅ Safely update cart count if it exists
   const cartCountContainer = document.getElementById('cart-count');
-  const totalItems = cartData.reduce((sum, item) => sum + item.quantity, 0);
-  cartCountContainer.textContent = `Cart (${totalItems})`;
+  if (cartCountContainer) {
+    const totalItems = cartData.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountContainer.textContent = `Cart (${totalItems})`;
+  }
 }
+
 
 </script>
  <!-- JOMER SCRIPT  -->
