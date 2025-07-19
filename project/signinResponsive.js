@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   }
 
-  // ✅ Show Sign In / Welcome / Log Out at top right (works on ALL pages)
+  // Show Sign In / Welcome / Log Out at top right (works on ALL pages)
   const signinButtons = document.getElementById('signin-buttons');
   if (signinButtons) {
     signinButtons.innerHTML = '';
