@@ -1241,7 +1241,7 @@ onclick='addToCart({
 <hr>
 </section>
 
-<!-- ✅ Sticky cart icon: uses only <button> -->
+<!-- Sticky cart icon: uses only <button> -->
 <div class="sticky-cart">
   <button class="btn cart-btn" onclick="goToCart()">
     <img src="assets/Shoppingcarticon.png" alt="Cart" class="cart-icon">
@@ -1249,7 +1249,7 @@ onclick='addToCart({
   </button>
 </div>
 
-<!-- ✅ Toast notification container -->
+<!-- Toast notification container -->
 <div id="toast" class="toast"></div>
 
 
@@ -1267,7 +1267,7 @@ onclick='addToCart({
 
 
 <script>
-  // ✅ Add full item object to localStorage cart
+  // Add full item object to localStorage cart
   function addToCart(item) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -1287,7 +1287,7 @@ onclick='addToCart({
     showToast(`${item.title} added to cart!`);
   }
 
-  // ✅ Update the sticky cart count immediately
+  // Update the sticky cart count immediately
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1298,10 +1298,10 @@ onclick='addToCart({
     }
   }
 
-  // ✅ Run update when page loads
+  // Run update when page loads
   window.addEventListener('DOMContentLoaded', updateCartCount);
 
-  // ✅ Show toast for 3 seconds
+  // Show toast for 3 seconds
   function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -1311,7 +1311,7 @@ onclick='addToCart({
     }, 3000);
   }
 
-  // ✅ Go to cart page when sticky cart is clicked
+  // Go to cart page when sticky cart is clicked
   function goToCart() {
     window.location.href = 'cart.html';
   }
