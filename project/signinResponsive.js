@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const signinPasswordInput = document.getElementById('signin-password');
   const showPasswordCheckbox = document.getElementById('show-password');
 
+  const createEmailInput = document.getElementById('email');
+  const createPasswordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirmPassword');
+
   if (signinEmailInput) {
     const savedEmail = localStorage.getItem('userEmail');
     if (savedEmail) signinEmailInput.value = savedEmail;
@@ -68,9 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+    const email = createEmailInput?.value.trim() || '';
+    const password = createPasswordInput?.value || '';
+    const confirmPassword = confirmPasswordInput?.value || '';
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
@@ -147,3 +151,4 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn('No #signin-buttons found on this page.');
   }
+});
