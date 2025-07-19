@@ -1266,27 +1266,27 @@ onclick='addToCart({
 
 
 <script>
-  // ✅ Adds item to cart in localStorage
-  function addToCart(title) {
+  // ✅ Add full item object to localStorage cart
+  function addToCart(item) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingIndex = cart.findIndex(i => i.title === title);
+
+    // Check if item exists
+    const existingIndex = cart.findIndex(i => i.title === item.title);
 
     if (existingIndex !== -1) {
       cart[existingIndex].quantity += 1;
     } else {
-      cart.push({ title: title, quantity: 1 });
+      item.quantity = 1; // Add quantity property
+      cart.push(item);
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // ✅ Update the count immediately
     updateCartCount();
-
-    // ✅ Show toast message
-    showToast(`${title} added to cart!`);
+    showToast(`${item.title} added to cart!`);
   }
 
-  // ✅ Updates sticky cart count
+  // ✅ Update the sticky cart count immediately
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1297,10 +1297,10 @@ onclick='addToCart({
     }
   }
 
-  // ✅ Run on page load
+  // ✅ Run update when page loads
   window.addEventListener('DOMContentLoaded', updateCartCount);
 
-  // ✅ Shows toast for 3 sec
+  // ✅ Show toast for 3 seconds
   function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -1310,7 +1310,7 @@ onclick='addToCart({
     }, 3000);
   }
 
-  // ✅ Use JS to navigate on click
+  // ✅ Go to cart page when sticky cart is clicked
   function goToCart() {
     window.location.href = 'cart.html';
   }
