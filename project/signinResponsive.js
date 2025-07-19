@@ -160,6 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    window.location.href = 'cart.html';
+    //window.location.href = 'cart.html';
   };
 });
