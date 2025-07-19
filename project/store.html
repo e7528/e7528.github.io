@@ -1248,7 +1248,7 @@ onclick='addToCart({
 
 
 <script>
-  //  Adds item to cart in localStorage
+  // ✅ Adds item to cart in localStorage
   function addToCart(title) {
     // Get current cart or empty array
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -1267,14 +1267,14 @@ onclick='addToCart({
     // Save updated cart
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    //  Update sticky cart count
+    // ✅ Update sticky cart count
     updateCartCount();
 
-    //  Show toast notification
+    // ✅ Show toast notification
     showToast(`${title} added to cart!`);
   }
 
-  //  Updates the count in sticky cart icon
+  // ✅ Updates the count in sticky cart icon
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1285,15 +1285,10 @@ onclick='addToCart({
     }
   }
 
-  //  Goes to cart page when sticky cart is clicked
-  function goToCart() {
-    window.location.href = 'cart.html';
-  }
-
-  //  Run count update on page load
+  // ✅ Run count update on page load
   window.addEventListener('DOMContentLoaded', updateCartCount);
 
-  //  Shows toast message for 3 seconds
+  // ✅ Shows toast message for 3 seconds
   function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -1302,7 +1297,13 @@ onclick='addToCart({
       toast.className = 'toast'; // Hide after 3s
     }, 3000);
   }
+
+  // ✅ Goes to cart page when sticky cart is clicked
+  function goToCart() {
+    window.location.href = 'cart.html';
+  }
 </script>
+  
 <!-- JOMER SCRIPT  -->
 <script src="signinResponsive.js"></script>
 
