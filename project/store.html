@@ -1240,15 +1240,15 @@ onclick='addToCart({
 <hr>
 </section>
 
-<!--  Sticky cart icon: shows count and goes to cart page -->
+<!-- ✅ Sticky cart icon: uses only <button> -->
 <div class="sticky-cart">
   <button class="btn cart-btn" onclick="goToCart()">
-    <a href="cart.html"> <img src="assets/Shoppingcarticon.png" alt="Cart" class="cart-icon"> </a>
+    <img src="assets/Shoppingcarticon.png" alt="Cart" class="cart-icon">
     <span id="cart-count">(0)</span>
   </button>
 </div>
 
-<!--  Toast notification container -->
+<!-- ✅ Toast notification container -->
 <div id="toast" class="toast"></div>
 
 
@@ -1268,31 +1268,25 @@ onclick='addToCart({
 <script>
   // ✅ Adds item to cart in localStorage
   function addToCart(title) {
-    // Get current cart or empty array
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Find if item exists
     const existingIndex = cart.findIndex(i => i.title === title);
 
     if (existingIndex !== -1) {
-      // If exists, increment quantity
       cart[existingIndex].quantity += 1;
     } else {
-      // If new, add with quantity 1
       cart.push({ title: title, quantity: 1 });
     }
 
-    // Save updated cart
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // ✅ Update sticky cart count
+    // ✅ Update the count immediately
     updateCartCount();
 
-    // ✅ Show toast notification
+    // ✅ Show toast message
     showToast(`${title} added to cart!`);
   }
 
-  // ✅ Updates the count in sticky cart icon
+  // ✅ Updates sticky cart count
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1303,22 +1297,22 @@ onclick='addToCart({
     }
   }
 
-  // ✅ Run count update on page load
+  // ✅ Run on page load
   window.addEventListener('DOMContentLoaded', updateCartCount);
 
-  // ✅ Shows toast message for 3 seconds
+  // ✅ Shows toast for 3 sec
   function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
     toast.className = 'toast show';
     setTimeout(() => {
-      toast.className = 'toast'; // Hide after 3s
+      toast.className = 'toast';
     }, 3000);
   }
 
-  // ✅ Goes to cart page when sticky cart is clicked
+  // ✅ Use JS to navigate on click
   function goToCart() {
-  //  window.location.href = 'cart.html';
+    window.location.href = 'cart.html';
   }
 </script>
   
