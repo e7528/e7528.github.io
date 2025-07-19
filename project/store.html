@@ -1223,14 +1223,14 @@ onclick='addToCart({
 </section>
 
 
-<!-- ✅ Example product item with Add to Cart button -->
+<!--  Example product item with Add to Cart button -->
 <div class="product">
   <h3>Poke Ball</h3>
   <!-- ✅ Calls addToCart() with only the title -->
   <button onclick="addToCart('Poke Ball')">Add to Cart</button>
 </div>
 
-<!-- ✅ Sticky cart icon: shows count and goes to cart page -->
+<!--  Sticky cart icon: shows count and goes to cart page -->
 <div class="sticky-cart">
   <button class="btn cart-btn" onclick="goToCart()">
     <img src="assets/Shoppingcarticon.png" alt="Cart" class="cart-icon">
@@ -1238,7 +1238,7 @@ onclick='addToCart({
   </button>
 </div>
 
-<!-- ✅ Toast notification container -->
+<!--  Toast notification container -->
 <div id="toast" class="toast"></div>
 
 <footer>
@@ -1251,12 +1251,12 @@ onclick='addToCart({
 
 
 
-<!-- ✅ Toast notification container -->
+<!--  Toast notification container -->
 <div id="toast" class="toast"></div>
 
 <!-- ✅ JavaScript logic -->
 <script>
-  // ✅ Adds item to cart in localStorage
+  //  Adds item to cart in localStorage
   function addToCart(title) {
     // Get current cart or empty array
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -1275,14 +1275,14 @@ onclick='addToCart({
     // Save updated cart
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // ✅ Update sticky cart count
+    //  Update sticky cart count
     updateCartCount();
 
-    // ✅ Show toast notification
+    //  Show toast notification
     showToast(`${title} added to cart!`);
   }
 
-  // ✅ Updates the count in sticky cart icon
+  //  Updates the count in sticky cart icon
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1293,15 +1293,15 @@ onclick='addToCart({
     }
   }
 
-  // ✅ Goes to cart page when sticky cart is clicked
+  //  Goes to cart page when sticky cart is clicked
   function goToCart() {
     window.location.href = 'cart.html';
   }
 
-  // ✅ Run count update on page load
+  //  Run count update on page load
   window.addEventListener('DOMContentLoaded', updateCartCount);
 
-  // ✅ Shows toast message for 3 seconds
+  //  Shows toast message for 3 seconds
   function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
