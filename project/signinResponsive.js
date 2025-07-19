@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show Sign In / Welcome / Log Out at top right (works on ALL pages)
   const signinButtons = document.getElementById('signin-buttons');
   if (signinButtons) {
-    signinButtons.innerHTML = '';
+    signinButtons.innerHTML = 'hi';
 
     const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
 
