@@ -147,19 +147,3 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn('No #signin-buttons found on this page.');
   }
-
-  // --- Example addToCart (keep or adjust for your use) ---
-  window.addToCart = function(item) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const existingIndex = cart.findIndex(i => i.title === item.title);
-    if (existingIndex !== -1) {
-      cart[existingIndex].quantity += 1;
-    } else {
-      cart.push(item);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    //window.location.href = 'cart.html';
-  };
-});
