@@ -1222,14 +1222,6 @@ onclick='addToCart({
 <hr>
 </section>
 
-
-<!--  Example product item with Add to Cart button -->
-<div class="product">
-  <h3>Poke Ball</h3>
-  <!-- ✅ Calls addToCart() with only the title -->
-  <button onclick="addToCart('Poke Ball')">Add to Cart</button>
-</div>
-
 <!--  Sticky cart icon: shows count and goes to cart page -->
 <div class="sticky-cart">
   <button class="btn cart-btn" onclick="goToCart()">
@@ -1254,7 +1246,7 @@ onclick='addToCart({
 <!--  Toast notification container -->
 <div id="toast" class="toast"></div>
 
-<!-- ✅ JavaScript logic -->
+
 <script>
   //  Adds item to cart in localStorage
   function addToCart(title) {
