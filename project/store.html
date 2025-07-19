@@ -527,30 +527,38 @@ margin-top: 1rem;
 
 }
 
+/*  Toast hidden by default */
 .toast {
   visibility: hidden;
-  min-width: 220px;
-  background: linear-gradient(to right, #ff94d9, #94dfff);
+  min-width: 200px;
+  background-color: #333;
   color: #fff;
   text-align: center;
-  border-radius: 24px;
-  padding: 12px 20px;
+  border-radius: 4px;
+  padding: 16px;
   position: fixed;
   z-index: 9999;
-  bottom: 40px;
-  right: 40px;
-  font-size: 1rem;
-  font-weight: bold;
-  opacity: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.5s ease, bottom 0.5s ease;
+  right: 30px;
+  bottom: 30px;
 }
 
+/*  Show toast when .show is added */
 .toast.show {
   visibility: visible;
-  opacity: 1;
-  bottom: 60px; /* slides up a bit */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
+/*  Fade in/out animations */
+@keyframes fadein {
+  from { bottom: 0; opacity: 0; }
+  to { bottom: 30px; opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { bottom: 30px; opacity: 1; }
+  to { bottom: 0; opacity: 0; }
+}
+
 
 
 
@@ -1214,12 +1222,25 @@ onclick='addToCart({
 </section>
 
 
+<!-- Example product item with Add to Cart button (NO redirect here!) -->
+<div class="product">
+  <h3>Poke Ball</h3>
+  <!-- This button ONLY calls addToCart() and shows a toast -->
+  <button onclick="addToCart({ title: 'Poke Ball', quantity: 1 })">
+    Add to Cart
+  </button>
+</div>
+
+<!--  Sticky cart icon that redirects to cart page when clicked -->
 <div class="sticky-cart">
   <button class="btn cart-btn" onclick="goToCart()">
     <img src="assets/Shoppingcarticon.png" alt="Cart" class="cart-icon">
     <span id="cart-count">(0)</span>
   </button>
 </div>
+
+<!--  Toast container to show confirmation when item is added -->
+<div id="toast" class="toast"></div>
 
 
 <footer>
@@ -1233,24 +1254,32 @@ onclick='addToCart({
 
 
 <script>
+// Adds an item to localStorage cart, updates count, shows toast
 function addToCart(item) {
+  // Get existing cart or start with empty array
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+  // Check if item already exists in cart
   const existingIndex = cart.findIndex(i => i.title === item.title);
   if (existingIndex !== -1) {
+    // If item exists, increase quantity
     cart[existingIndex].quantity += 1;
   } else {
+    // If new item, push to cart
     cart.push(item);
   }
 
+  // Save updated cart back to localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
 
+  // Update the counter shown on cart icon
   updateCartCount();
 
-  // ✅ Show toast instead of alert
+  // Show toast to user instead of auto redirect
   showToast(`${item.title} added to cart!`);
 }
 
+// Updates the cart count in the sticky cart icon
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1260,20 +1289,24 @@ function updateCartCount() {
   }
 }
 
+// Only redirects when clicking sticky cart icon
 function goToCart() {
   window.location.href = 'cart.html';
 }
 
+// Run count update on page load
 window.addEventListener('DOMContentLoaded', updateCartCount);
 
+// Shows temporary toast message at bottom corner
 function showToast(message) {
   const toast = document.getElementById('toast');
   toast.textContent = message;
-  toast.className = 'toast show';
+  toast.className = 'toast show'; 
   setTimeout(() => {
-    toast.className = 'toast';
+    toast.className = 'toast'; 
   }, 3000);
 }
+
 </script>
 <!-- JOMER SCRIPT  -->
 <script src="signinResponsive.js"></script>
