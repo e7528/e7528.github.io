@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Concepts in Human-Computer Interaction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            max-height: 450px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 35vh;
+                max-height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#F0F4F8]">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#073B4C] mb-2">Key Concepts in Human-Computer Interaction</h1>
+            <p class="text-lg text-[#118AB2]">An Interactive Exploration of How We Connect with Technology</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#073B4C] mb-4">The Psychology of Everyday Things</h2>
+                <p class="text-[#118AB2] mb-6">Effective design isn't accidental. It relies on a few core principles that make our interactions with technology feel intuitive and natural. These concepts, derived from Don Norman's work, are the foundation of user-friendly design.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                    <div class="bg-[#f8f9fa] p-4 rounded-lg">
+                        <span class="text-4xl">🗺️</span>
+                        <h3 class="font-semibold text-lg text-[#073B4C] mt-2">Mappings</h3>
+                        <p class="text-sm text-[#118AB2]">The clear relationship between a control and its effect. Think of a volume slider: moving it up intuitively increases the sound.</p>
+                    </div>
+                    <div class="bg-[#f8f9fa] p-4 rounded-lg">
+                        <span class="text-4xl">🔊</span>
+                        <h3 class="font-semibold text-lg text-[#073B4C] mt-2">Feedback</h3>
+                        <p class="text-sm text-[#118AB2]">Communicating the result of an action. A button that clicks or a progress bar that fills tells you the system is working.</p>
+                    </div>
+                    <div class="bg-[#f8f9fa] p-4 rounded-lg">
+                        <span class="text-4xl">💡</span>
+                        <h3 class="font-semibold text-lg text-[#073B4C] mt-2">Conceptual Models</h3>
+                        <p class="text-sm text-[#118AB2]">Our mental understanding of how something works. The desktop trash can icon instantly tells us it's for deleting files.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-center text-[#073B4C] mb-4">The Two Sides of the Equation</h2>
+                <p class="text-[#118AB2] text-center mb-6">HCI thrives on the partnership between human intuition and computational power. Each brings a unique set of skills to the table, creating a whole that is far greater than the sum of its parts.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border-2 border-[#FF6B6B] rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-3 text-center">🧠 Human Abilities</h3>
+                        <ul class="space-y-2 text-[#118AB2]">
+                            <li class="flex items-start"><span class="text-[#FF6B6B] mr-2">✔</span> Pattern Recognition & Creativity</li>
+                            <li class="flex items-start"><span class="text-[#FF6B6B] mr-2">✔</span> Inductive Reasoning from context</li>
+                            <li class="flex items-start"><span class="text-[#FF6B6B] mr-2">✔</span> Adapting to uncertainty & ambiguity</li>
+                            <li class="flex items-start"><span class="text-[#FF6B6B] mr-2">✔</span> Excels at "hard and fuzzy" tasks</li>
+                        </ul>
+                    </div>
+                    <div class="border-2 border-[#06D6A0] rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-3 text-center">💻 Computer Abilities</h3>
+                        <ul class="space-y-2 text-[#118AB2]">
+                            <li class="flex items-start"><span class="text-[#06D6A0] mr-2">✔</span> Precise Counting & Measurement</li>
+                            <li class="flex items-start"><span class="text-[#06D6A0] mr-2">✔</span> Rapid Data Processing & Storage</li>
+                            <li class="flex items-start"><span class="text-[#06D6A0] mr-2">✔</span> Tireless, accurate repetition</li>
+                             <li class="flex items-start"><span class="text-[#06D6A0] mr-2">✔</span> Excels at "simple, defined" tasks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#073B4C] mb-4">Synergy in Action: A Medical Diagnostics Workflow</h2>
+                <p class="text-[#118AB2] mb-6">This simplified flow shows how human expertise and computer analysis collaborate. The computer rapidly processes vast amounts of data to find potential issues, empowering the human expert to make the final, critical judgment.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+                    <div class="w-full md:w-1/4 p-4 bg-[#FFD166] bg-opacity-20 rounded-lg">
+                        <p class="font-bold text-[#073B4C]">Computer Role</p>
+                        <p class="text-sm text-[#118AB2]">Analyze thousands of scans, flagging anomalies based on algorithms.</p>
+                    </div>
+                    <div class="text-2xl font-bold text-[#118AB2] transform md:-rotate-0 rotate-90">&rarr;</div>
+                    <div class="w-full md:w-1/4 p-4 bg-[#06D6A0] bg-opacity-20 rounded-lg">
+                        <p class="font-bold text-[#073B4C]">Data Hand-off</p>
+                        <p class="text-sm text-[#118AB2]">Presents a prioritized list of potential issues to the human expert.</p>
+                    </div>
+                    <div class="text-2xl font-bold text-[#118AB2] transform md:-rotate-0 rotate-90">&rarr;</div>
+                    <div class="w-full md:w-1/4 p-4 bg-[#FF6B6B] bg-opacity-20 rounded-lg">
+                        <p class="font-bold text-[#073B4C]">Human Role</p>
+                        <p class="text-sm text-[#118AB2]">Interpret nuanced images with medical knowledge and context to diagnose.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-1 lg:col-span-1 bg-white rounded-lg shadow-md p-6 flex flex-col justify-center">
+                <h2 class="text-2xl font-bold text-[#073B4C] mb-4">The User Interface: Our Bridge to Digital Worlds</h2>
+                <p class="text-[#118AB2]">The UI is the critical point of contact. This chart illustrates the estimated prevalence of major interface types in today's technology landscape. While Graphical UIs remain dominant, voice and immersive experiences are rapidly growing.</p>
+            </div>
+
+            <div class="md:col-span-1 lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <div class="chart-container">
+                    <canvas id="uiTypesChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="md:col-span-1 lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                 <div class="chart-container">
+                    <canvas id="disciplinesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-1 lg:col-span-1 bg-white rounded-lg shadow-md p-6 flex flex-col justify-center">
+                <h2 class="text-2xl font-bold text-[#073B4C] mb-4">The Multidisciplinary Nature of HCI</h2>
+                <p class="text-[#118AB2]">HCI is not a single field but a fusion of several key disciplines. As shown in the chart, Computer Science, Cognitive Science, and Human Factors Engineering each contribute essential perspectives to create systems that are both powerful and perfectly suited for human use.</p>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-12 py-6 border-t border-gray-300">
+            <p class="text-sm text-[#118AB2]">Infographic created to visualize key concepts in Human-Computer Interaction.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const uiTypesCtx = document.getElementById('uiTypesChart').getContext('2d');
+        const uiTypesChart = new Chart(uiTypesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Graphical UI (GUI)', 'Voice UI (VUI)', 'Immersive UI (VR/AR)'],
+                datasets: [{
+                    label: 'Prevalence of UI Types',
+                    data: [75, 18, 7],
+                    backgroundColor: [
+                        '#118AB2',
+                        '#06D6A0',
+                        '#FFD166'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#073B4C'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+        
+        const disciplinesCtx = document.getElementById('disciplinesChart').getContext('2d');
+        const disciplinesChart = new Chart(disciplinesCtx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    wrapLabel('Computer Science'),
+                    wrapLabel('Cognitive Science & Psychology'),
+                    wrapLabel('Human Factors Engineering')
+                ],
+                datasets: [{
+                    label: 'Contribution to HCI',
+                    data: [10, 10, 10],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                    borderColor: '#FF6B6B',
+                    pointBackgroundColor: '#FF6B6B',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#FF6B6B'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: '#E0E0E0'
+                        },
+                        grid: {
+                            color: '#E0E0E0'
+                        },
+                        pointLabels: {
+                            color: '#073B4C',
+                            font: {
+                                size: 12
+                            }
+                        },
+                        ticks: {
+                           display: false,
+                           maxTicksLimit: 1
+                        },
+                        min: 0,
+                        max: 12
+                    }
+                },
+                plugins: {
+                    legend: {
+                       display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
